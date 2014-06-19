@@ -1,0 +1,127 @@
+body {
+  background-color: lightgray;
+}
+p {
+  font-family: Verdana;
+  font-size: 13px;
+}
+.float-wrap {
+  overflow: auto;
+  width: 1200px;
+}
+.part {
+  float: left;
+  width: 8px;
+  height: 100px;
+  text-align: left;
+}
+.labelpart {
+  font-family: Verdana;
+  font-size: 12px;
+  float: left;
+  width: 8px;
+  height: 20px;
+  text-align: left;
+}
+.colorr0 {
+  background-color: rgb(255, 0, 0);
+}
+.colorr1 {
+  background-color: rgb(255, 16, 0);
+}
+.colorr2 {
+  background-color: rgb(255, 32, 0);
+}
+.colorr3 {
+  background-color: rgb(255, 48, 0);
+}
+.colorr4 {
+  background-color: rgb(255, 64, 0);
+}
+.colorr5 {
+  background-color: rgb(255, 80, 0);
+}
+.colorr6 {
+  background-color: rgb(255, 96, 0);
+}
+.colorr7 {
+  background-color: rgb(255, 112, 0);
+}
+.colorr8 {
+  background-color: rgb(255, 128, 0);
+}
+.colorr9 {
+  background-color: rgb(255, 144, 0);
+}
+.colorr10 {
+  background-color: rgb(255, 160, 0);
+}
+.colorr11 {
+  background-color: rgb(255, 176, 0);
+}
+.colorr12 {
+  background-color: rgb(255, 192, 0);
+}
+.colorr13 {
+  background-color: rgb(255, 208, 0);
+}
+.colorr14 {
+  background-color: rgb(255, 224, 0);
+}
+.colorr15 {
+  background-color: rgb(255, 240, 0);
+}
+.colorr16 {
+  background-color: rgb(255, 255, 0);
+}
+.colorg0 {
+  background-color: rgb(0, 255, 0);
+}
+.colorg1 {
+  background-color: rgb(16, 255, 0);
+}
+.colorg2 {
+  background-color: rgb(32, 255, 0);
+}
+.colorg3 {
+  background-color: rgb(48, 255, 0);
+}
+.colorg4 {
+  background-color: rgb(64, 255, 0);
+}
+.colorg5 {
+  background-color: rgb(80, 255, 0);
+}
+.colorg6 {
+  background-color: rgb(96, 255, 0);
+}
+.colorg7 {
+  background-color: rgb(112, 255, 0);
+}
+.colorg8 {
+  background-color: rgb(128, 255, 0);
+}
+.colorg9 {
+  background-color: rgb(144, 255, 0);
+}
+.colorg10 {
+  background-color: rgb(160, 255, 0);
+}
+.colorg11 {
+  background-color: rgb(176, 255, 0);
+}
+.colorg12 {
+  background-color: rgb(192, 255, 0);
+}
+.colorg13 {
+  background-color: rgb(208, 255, 0);
+}
+.colorg14 {
+  background-color: rgb(224, 255, 0);
+}
+.colorg15 {
+  background-color: rgb(240, 255, 0);
+}
+.colorg16 {
+  background-color: rgb(255, 255, 0);
+}
