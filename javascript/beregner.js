@@ -546,9 +546,9 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
         s += "<div class=\"part colorg" + d + "\" style=\"width:" + partWidth + "%\"></div>";
       }
       if (i == 0 || i == 20 || i == 40 || i == 60 || i == maxLevealder) {
-        u += "<div class=\"labelpart\">" + i + "</div>";
+        u += "<div class=\"labelpart\" style=\"width:" + partWidth + "%\">" + i + "</div>";
       } else {
-        u += "<div class=\"labelpart\"></div>";
+        u += "<div class=\"labelpart\" style=\"width:" + partWidth + "%\"></div>";
       }
 
     }
