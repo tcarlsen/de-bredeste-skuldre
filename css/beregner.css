@@ -6,12 +6,10 @@ p {
   font-size: 13px;
 }
 .float-wrap {
-  overflow: auto;
-  width: 1200px;
+  width: 100%;
 }
 .part {
   float: left;
-  width: 8px;
   height: 100px;
   text-align: left;
 }

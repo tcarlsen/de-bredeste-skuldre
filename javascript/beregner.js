@@ -523,6 +523,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     var u = "";
     var s = "";
+    var partWidth = 100/maxLevealder;
     s += "<div class=\"float-wrap\">";
     u += "<div class=\"float-wrap\">";
     for (var i = 0; i <= maxLevealder; i++) {
@@ -538,11 +539,11 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       if (scale <= 0) {
         g = Math.floor((1 + scale) * 255);
         var d = Math.round(g / 16);
-        s += "<div class=\"part colorr" + d + "\"></div>";
+        s += "<div class=\"part colorr" + d + "\" style=\"width:" + partWidth + "%\"></div>";
       } else {
         r = Math.floor((1 - scale) * 255);
         var d = Math.round(r / 16);
-        s += "<div class=\"part colorg" + d + "\"></div>";
+        s += "<div class=\"part colorg" + d + "\" style=\"width:" + partWidth + "%\"></div>";
       }
       if (i == 0 || i == 20 || i == 40 || i == 60 || i == maxLevealder) {
         u += "<div class=\"labelpart\">" + i + "</div>";
