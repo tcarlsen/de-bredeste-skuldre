@@ -9,13 +9,12 @@ if (window.onload) {
 }
 
 function VisInputForm(num, fixed) {
-  document.getElementById("form").style.display = "inline";
+  document.getElementById("form").style.display = "block";
   document.getElementById("udfold").style.display = "none";
 }
 
 function Beregner_init() {
   document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(31000);
-  document.getElementById("udfold").style.display = "none";
 }
 
 function GetIndkomst50(koen, udd) {
@@ -619,7 +618,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   // ===============================================
 
   document.getElementById("form").style.display = "none";
-  document.getElementById("udfold").style.display = "inline";
+  document.getElementById("udfold").style.display = "block";
 
   return nettobidrag;
 }
