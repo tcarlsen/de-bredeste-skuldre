@@ -523,7 +523,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     var u = "";
     var s = "";
-    var partWidth = 100/maxLevealder;
+    var partWidth = 100 / (maxLevealder + 1);
     s += "<div class=\"float-wrap\">";
     u += "<div class=\"float-wrap\">";
     for (var i = 0; i <= maxLevealder; i++) {
