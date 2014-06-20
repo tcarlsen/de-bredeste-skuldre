@@ -5,328 +5,334 @@
   <link rel="stylesheet" href="css/beregner.css" media="screen" charset="utf-8">
 </head>
 <body>
-  <h3>Er du økonomisk bæredygtig?</h3>
-  <p>Svar på nogle få spørgsmål og find ud af om du koster samfundet mere end du bidrager. Bemærk at resultatet er beregnet ud fra et gennemsnit for danskere med samme køn, alder, uddannelse, indkomst og tilknytning til arbejdsmarkedet.</p>
-  <button onclick="VisInputForm()" id="udfold" style="display">Vis indtastningsfelter</button>
-  <form id="form">
-    <div class="form-item">
-      <label for="select1">Hvad er dit køn?</label>
-      <select id="select1" onchange="Parametre2(this.form)">
-        <option>Mand</option>
-        <option>Kvinde</option>
-      </select>
+
+  <div class="dbs-container">
+    <h1 class="dbs-header">Er du økonomisk bæredygtig?</h1>
+    <p class="dbs-desc">Svar på nogle få spørgsmål og find ud af om du koster samfundet mere end du bidrager. Bemærk at resultatet er beregnet ud fra et gennemsnit for danskere med samme køn, alder, uddannelse, indkomst og tilknytning til arbejdsmarkedet.</p>
+    <form id="form">
+      <div class="dbs-form-item">
+        <label for="select1">Hvad er dit køn?</label>
+        <select id="select1" onchange="Parametre2(this.form)">
+          <option>Mand</option>
+          <option>Kvinde</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="alder">Hvor gammel er du?</label>
+        <select id="alder">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+          <option>32</option>
+          <option>33</option>
+          <option>34</option>
+          <option>35</option>
+          <option>36</option>
+          <option>37</option>
+          <option>38</option>
+          <option>39</option>
+          <option>40</option>
+          <option>41</option>
+          <option>42</option>
+          <option>43</option>
+          <option>44</option>
+          <option>45</option>
+          <option>46</option>
+          <option>47</option>
+          <option>48</option>
+          <option>49</option>
+          <option>50</option>
+          <option>51</option>
+          <option>52</option>
+          <option>53</option>
+          <option>54</option>
+          <option>55</option>
+          <option>56</option>
+          <option>57</option>
+          <option>58</option>
+          <option>59</option>
+          <option>60</option>
+          <option>61</option>
+          <option>62</option>
+          <option>63</option>
+          <option>64</option>
+          <option>65</option>
+          <option>66</option>
+          <option>67</option>
+          <option>68</option>
+          <option>69</option>
+          <option>70</option>
+          <option>71</option>
+          <option>72</option>
+          <option>73</option>
+          <option>74</option>
+          <option>75</option>
+          <option>76</option>
+          <option>77</option>
+          <option>78</option>
+          <option>79</option>
+          <option>80</option>
+          <option>81</option>
+          <option>82</option>
+          <option>83</option>
+          <option>84</option>
+          <option>85</option>
+          <option>86</option>
+          <option>87</option>
+          <option>88</option>
+          <option>89</option>
+          <option>90</option>
+          <option>91</option>
+          <option>92</option>
+          <option>93</option>
+          <option>94</option>
+          <option>95</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="select2">Hvad er den højeste uddannelse, du har taget eller forventer at tage?</label>
+        <select id="select2" onchange="Parametre2(this.form)">
+          <option>Grundskole</option>
+          <option>Almengymnasial udd.</option>
+          <option>Erhvervsgymnasial udd.</option>
+          <option>Erhvervsfaglig udd.</option>
+          <option>Kort videregående udd.</option>
+          <option>Mellemlang videregående udd. (inkl. professionsbachelor)</option>
+          <option>Universitstsbachelor</option>
+          <option>Lang videregående udd.</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="ledig_syg">Hvor mange år har du hidtil været arbejdsløs, sygemeldt eller på (barsels)orlov efter du fyldte 18 år?</label>
+        <select id="ledig_syg">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+          <option>32</option>
+          <option>33</option>
+          <option>34</option>
+          <option>35</option>
+          <option>36</option>
+          <option>37</option>
+          <option>38</option>
+          <option>39</option>
+          <option>40</option>
+          <option>41</option>
+          <option>42</option>
+          <option>43</option>
+          <option>44</option>
+          <option>45</option>
+          <option>46</option>
+          <option>47</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="pensionsAlder">Ved hvilken alder forventer du at gå på pension?</label>
+        <select id="pensionsAlder">
+          <option>60</option>
+          <option>61</option>
+          <option>62</option>
+          <option>63</option>
+          <option>64</option>
+          <option selected="selected">65</option>
+          <option>66</option>
+          <option>67</option>
+          <option>68</option>
+          <option>69</option>
+          <option>70</option>
+          <option>71</option>
+          <option>72</option>
+          <option>73</option>
+          <option>74</option>
+          <option>75</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="udland1">Hvor mange år har du boet i udlandet, inden du fyldte 18 år?</label>
+        <select id="udland1">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="udland2">Hvor mange år har du boet i udlandet, efter du fyldte 18 år?</label>
+        <select id="udland2">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+          <option>32</option>
+          <option>33</option>
+          <option>34</option>
+          <option>35</option>
+          <option>36</option>
+          <option>37</option>
+          <option>38</option>
+          <option>39</option>
+          <option>40</option>
+          <option>41</option>
+          <option>42</option>
+          <option>43</option>
+          <option>44</option>
+          <option>45</option>
+          <option>46</option>
+          <option>47</option>
+          <option>48</option>
+          <option>49</option>
+          <option>50</option>
+          <option>51</option>
+          <option>52</option>
+          <option>53</option>
+          <option>54</option>
+          <option>55</option>
+          <option>56</option>
+          <option>57</option>
+          <option>58</option>
+          <option>59</option>
+          <option>60</option>
+          <option>61</option>
+          <option>62</option>
+          <option>63</option>
+          <option>64</option>
+          <option>65</option>
+          <option>66</option>
+          <option>67</option>
+          <option>68</option>
+          <option>69</option>
+          <option>70</option>
+          <option>71</option>
+          <option>72</option>
+          <option>73</option>
+          <option>74</option>
+          <option>75</option>
+          <option>76</option>
+          <option>77</option>
+          <option>78</option>
+          <option>79</option>
+          <option>80</option>
+          <option>81</option>
+          <option>82</option>
+        </select>
+      </div>
+      <div class="dbs-form-item">
+        <label for="indkomst50">Hvor meget tjener du - eller forventer du at tjene - om måneden som 50-årig inklusiv pension, bonus osv.?</label>
+        <input type="text" name="indkomst50" id="indkomst50" value="31000" size="6"> kr
+        <em id="estimat_indkomst50" class="dbs-em"></em>
+      </div>
+      <button onclick="Parametre(this.form)" class="dbs-submit" type="button">Beregn</button>
+    </form>
+    <button onclick="VisInputForm()" id="udfold" class="dbs-submit" style="display:none">Ret oplysninger</button>
+    <div class="dbs-result">
+      <p id="p1"></p>
+      <div id="graf"></div>
+      <div id="labels"></div>
+      <p id="p2"></p>
     </div>
-    <div class="form-item">
-      <label for="alder">Hvor gammel er du?</label>
-      <select id="alder">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>21</option>
-        <option>22</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option>32</option>
-        <option>33</option>
-        <option>34</option>
-        <option>35</option>
-        <option>36</option>
-        <option>37</option>
-        <option>38</option>
-        <option>39</option>
-        <option>40</option>
-        <option>41</option>
-        <option>42</option>
-        <option>43</option>
-        <option>44</option>
-        <option>45</option>
-        <option>46</option>
-        <option>47</option>
-        <option>48</option>
-        <option>49</option>
-        <option>50</option>
-        <option>51</option>
-        <option>52</option>
-        <option>53</option>
-        <option>54</option>
-        <option>55</option>
-        <option>56</option>
-        <option>57</option>
-        <option>58</option>
-        <option>59</option>
-        <option>60</option>
-        <option>61</option>
-        <option>62</option>
-        <option>63</option>
-        <option>64</option>
-        <option>65</option>
-        <option>66</option>
-        <option>67</option>
-        <option>68</option>
-        <option>69</option>
-        <option>70</option>
-        <option>71</option>
-        <option>72</option>
-        <option>73</option>
-        <option>74</option>
-        <option>75</option>
-        <option>76</option>
-        <option>77</option>
-        <option>78</option>
-        <option>79</option>
-        <option>80</option>
-        <option>81</option>
-        <option>82</option>
-        <option>83</option>
-        <option>84</option>
-        <option>85</option>
-        <option>86</option>
-        <option>87</option>
-        <option>88</option>
-        <option>89</option>
-        <option>90</option>
-        <option>91</option>
-        <option>92</option>
-        <option>93</option>
-        <option>94</option>
-        <option>95</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="select2">Hvad er den højeste uddannelse, du har taget eller forventer at tage?</label>
-      <select id="select2" onchange="Parametre2(this.form)">
-        <option>Grundskole</option>
-        <option>Almengymnasial udd.</option>
-        <option>Erhvervsgymnasial udd.</option>
-        <option>Erhvervsfaglig udd.</option>
-        <option>Kort videregående udd.</option>
-        <option>Mellemlang videregående udd. (inkl. professionsbachelor)</option>
-        <option>Universitstsbachelor</option>
-        <option>Lang videregående udd.</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="ledig_syg">Hvor mange år har du hidtil været arbejdsløs, sygemeldt eller på (barsels)orlov efter du fyldte 18 år?</label>
-      <select id="ledig_syg">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>21</option>
-        <option>22</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option>32</option>
-        <option>33</option>
-        <option>34</option>
-        <option>35</option>
-        <option>36</option>
-        <option>37</option>
-        <option>38</option>
-        <option>39</option>
-        <option>40</option>
-        <option>41</option>
-        <option>42</option>
-        <option>43</option>
-        <option>44</option>
-        <option>45</option>
-        <option>46</option>
-        <option>47</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="pensionsAlder">Ved hvilken alder forventer du at gå på pension?</label>
-      <select id="pensionsAlder">
-        <option>60</option>
-        <option>61</option>
-        <option>62</option>
-        <option>63</option>
-        <option>64</option>
-        <option selected="selected">65</option>
-        <option>66</option>
-        <option>67</option>
-        <option>68</option>
-        <option>69</option>
-        <option>70</option>
-        <option>71</option>
-        <option>72</option>
-        <option>73</option>
-        <option>74</option>
-        <option>75</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="udland1">Hvor mange år har du boet i udlandet, inden du fyldte 18 år?</label>
-      <select id="udland1">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="udland2">Hvor mange år har du boet i udlandet, efter du fyldte 18 år?</label>
-      <select id="udland2">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>21</option>
-        <option>22</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option>32</option>
-        <option>33</option>
-        <option>34</option>
-        <option>35</option>
-        <option>36</option>
-        <option>37</option>
-        <option>38</option>
-        <option>39</option>
-        <option>40</option>
-        <option>41</option>
-        <option>42</option>
-        <option>43</option>
-        <option>44</option>
-        <option>45</option>
-        <option>46</option>
-        <option>47</option>
-        <option>48</option>
-        <option>49</option>
-        <option>50</option>
-        <option>51</option>
-        <option>52</option>
-        <option>53</option>
-        <option>54</option>
-        <option>55</option>
-        <option>56</option>
-        <option>57</option>
-        <option>58</option>
-        <option>59</option>
-        <option>60</option>
-        <option>61</option>
-        <option>62</option>
-        <option>63</option>
-        <option>64</option>
-        <option>65</option>
-        <option>66</option>
-        <option>67</option>
-        <option>68</option>
-        <option>69</option>
-        <option>70</option>
-        <option>71</option>
-        <option>72</option>
-        <option>73</option>
-        <option>74</option>
-        <option>75</option>
-        <option>76</option>
-        <option>77</option>
-        <option>78</option>
-        <option>79</option>
-        <option>80</option>
-        <option>81</option>
-        <option>82</option>
-      </select>
-    </div>
-    <div class="form-item">
-      <label for="indkomst50">Hvor meget tjener du - eller forventer du at tjene - om måneden som 50-årig inklusiv pension, bonus osv.?</label>
-      <input type="text" name="indkomst50" id="indkomst50" value="31000" size="6">kr
-    </div>
-    <div id="estimat_indkomst50"></div>
-    <input type="Button" value="Beregn" onclick="Parametre(this.form)">
-  </form>
-  <p id="p1"></p>
-  <div id="graf"></div>
-  <div id="labels"></div>
-  <p id="p2"></p>
+  </div>
+
   <script src="javascript/beregner.js"></script>
 </body>
 </html>

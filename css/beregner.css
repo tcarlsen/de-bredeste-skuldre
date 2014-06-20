@@ -1,10 +1,64 @@
-body {
-  background-color: lightgray;
+.dbs-container {
+  background-image: url(/upload/3rd-party/de-bredeste-skuldre/images/cover-3.jpg);
 }
-p {
-  font-family: Verdana;
+
+.dbs-header {
+  background-color: rgba(0,0,0,0.8);
+  font-family: b-sans-eb;
+  color: #ccc;
+  padding: 0 20px;
+}
+
+.dbs-desc {
+  padding: 9px 20px;
+  width: 610px;
+  font-size: 21px;
+  line-height: 29px;
+}
+
+.dbs-form-item {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 9px 20px;
+  margin: 9px 0;
+}
+
+.dbs-form-item label {
+  font-family: b-sans-r;
+  font-size: 17px;
+  font-weight: normal;
+  padding-bottom: 3px;
+}
+
+.dbs-form-item input {
+  width: 35px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  padding: 3px 7px;
+  color: #000;
+}
+
+.dbs-em p {
   font-size: 13px;
+  margin: 0;
 }
+
+.dbs-submit {
+  font-size: 36px;
+  font-family: b-sans-eb;
+  padding: 7px 17px;
+  background-color: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 6px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.dbs-result {
+  background-color: rgba(255,255,255,0.9);
+  padding: 9px 20px;
+}
+
 .float-wrap {
   width: 100%;
 }
@@ -14,12 +68,9 @@ p {
   text-align: left;
 }
 .labelpart {
-  font-family: Verdana;
-  font-size: 12px;
   float: left;
   width: 8px;
   height: 20px;
-  text-align: left;
 }
 .colorr0 {
   background-color: rgb(255, 0, 0);
