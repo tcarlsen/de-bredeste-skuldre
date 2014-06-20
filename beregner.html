@@ -5,17 +5,19 @@
   <link rel="stylesheet" href="css/beregner.css" media="screen" charset="utf-8">
 </head>
 <body>
-  <p style="font-size: 125%"><b>Er du økonomisk bæredygtig?</b> (version 19/6 2014, endelig version)</p>
+  <h3>Er du økonomisk bæredygtig?</h3>
+  <p>Svar på nogle få spørgsmål og find ud af om du koster samfundet mere end du bidrager. Bemærk at resultatet er beregnet ud fra et gennemsnit for danskere med samme køn, alder, uddannelse, indkomst og tilknytning til arbejdsmarkedet.</p>
   <button onclick="VisInputForm()" id="udfold" style="display">Vis indtastningsfelter</button>
   <form id="form">
-    <p>Svar på nogle få spørgsmål og find ud af om du koster samfundet mere end du bidrager. Bemærk at resultatet er beregnet ud fra et gennemsnit for danskere med samme køn, alder, uddannelse, indkomst og tilknytning til arbejdsmarkedet.</p>
-    <p>Hvad er dit køn?
+    <div class="form-item">
+      <label for="select1">Hvad er dit køn?</label>
       <select id="select1" onchange="Parametre2(this.form)">
         <option>Mand</option>
         <option>Kvinde</option>
       </select>
-    </p>
-    <p>Hvor gammel er du?
+    </div>
+    <div class="form-item">
+      <label for="alder">Hvor gammel er du?</label>
       <select id="alder">
         <option>0</option>
         <option>1</option>
@@ -114,8 +116,9 @@
         <option>94</option>
         <option>95</option>
       </select>
-    </p>
-    <p>Hvad er den højeste uddannelse, du har taget eller forventer at tage?
+    </div>
+    <div class="form-item">
+      <label for="select2">Hvad er den højeste uddannelse, du har taget eller forventer at tage?</label>
       <select id="select2" onchange="Parametre2(this.form)">
         <option>Grundskole</option>
         <option>Almengymnasial udd.</option>
@@ -126,9 +129,9 @@
         <option>Universitstsbachelor</option>
         <option>Lang videregående udd.</option>
       </select>
-    </p>
-
-    <p>Hvor mange år har du hidtil været arbejdsløs, sygemeldt eller på (barsels)orlov efter du fyldte 18 år?
+    </div>
+    <div class="form-item">
+      <label for="ledig_syg">Hvor mange år har du hidtil været arbejdsløs, sygemeldt eller på (barsels)orlov efter du fyldte 18 år?</label>
       <select id="ledig_syg">
         <option>0</option>
         <option>1</option>
@@ -179,8 +182,9 @@
         <option>46</option>
         <option>47</option>
       </select>
-    </p>
-    <p>Ved hvilken alder forventer du at gå på pension?
+    </div>
+    <div class="form-item">
+      <label for="pensionsAlder">Ved hvilken alder forventer du at gå på pension?</label>
       <select id="pensionsAlder">
         <option>60</option>
         <option>61</option>
@@ -199,8 +203,9 @@
         <option>74</option>
         <option>75</option>
       </select>
-    </p>
-    <p>Hvor mange år har du boet i udlandet, inden du fyldte 18 år?
+    </div>
+    <div class="form-item">
+      <label for="udland1">Hvor mange år har du boet i udlandet, inden du fyldte 18 år?</label>
       <select id="udland1">
         <option>0</option>
         <option>1</option>
@@ -222,8 +227,9 @@
         <option>17</option>
         <option>18</option>
       </select>
-    </p>
-    <p>Hvor mange år har du boet i udlandet, efter du fyldte 18 år?
+    </div>
+    <div class="form-item">
+      <label for="udland2">Hvor mange år har du boet i udlandet, efter du fyldte 18 år?</label>
       <select id="udland2">
         <option>0</option>
         <option>1</option>
@@ -309,9 +315,11 @@
         <option>81</option>
         <option>82</option>
       </select>
-    </p>
-    <p>Hvor meget tjener du - eller forventer du at tjene - om måneden som 50-årig inklusiv pension, bonus osv.?
-      <input type="text" name="indkomst50" value="31000" size="6">kr</p>
+    </div>
+    <div class="form-item">
+      <label for="indkomst50">Hvor meget tjener du - eller forventer du at tjene - om måneden som 50-årig inklusiv pension, bonus osv.?</label>
+      <input type="text" name="indkomst50" id="indkomst50" value="31000" size="6">kr
+    </div>
     <div id="estimat_indkomst50"></div>
     <input type="Button" value="Beregn" onclick="Parametre(this.form)">
   </form>
