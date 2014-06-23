@@ -749,7 +749,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</b></p>";
     }
 
-    document.getElementById("p1").innerHTML += "<img src=\"images/facebook.png\">";
+    document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Del på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Del på Facebook</a></div>";
 
     if (mio >= 0) {
       document.getElementById("p1").innerHTML += "<p>Det svarer til et overskud på <b>" + kr + " kr</b> pr. leveår.</p>"
