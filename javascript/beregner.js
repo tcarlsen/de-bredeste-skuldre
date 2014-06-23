@@ -744,9 +744,9 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("p1").innerHTML = "<p>Resultat:</p>";
 
     if (mio >= 0) {
-      document.getElementById("p1").innerHTML += "<img src=\"images/thumbs-up.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du giver samfundet et overskud på " + mio + " mio. kr</b></p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-up.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du giver samfundet et overskud på " + mio + " mio. kr</b></p>";
     } else {
-      document.getElementById("p1").innerHTML += "<img src=\"images/thumbs-down.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</b></p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</b></p>";
     }
 
     document.getElementById("p1").innerHTML += "<img src=\"images/facebook.png\">";
