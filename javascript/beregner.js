@@ -233,7 +233,7 @@ function IsDigits(val) {
 }
 
 function IndkomstText(y) {
-  if(y == -55555) return "<p>Indkomsten skal angives i dagens kroner.</p>";
+  if(y == -55555) return "<p>Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</p>";
   else return "<p>Indkomsten skal angives i dagens kroner. (Ud fra de øvrige informationer, du har givet, vil du gennemsnitligt tjene: " + FormatNumber(y) + " kr)</p>";
 }
 
@@ -244,7 +244,9 @@ function PensionsText(alder) {
   var x = [75,75,75,75,75,75,75,75,75,74,74,74,74,74,74,74,74,74,73,73,73,73,73,73,73,73,73,72,72,72,72,72,72,72,72,72,71,71,71,71,70,70,70,70,69,69,69,69,68,68,68,68,67,67,67,67,67,67,67,66,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65];
   if(alder > 77) pa = 67;
   else pa = x[alder];
-  return "<p>Ud fra din alder forventes folkepensionsalderen at være: " + pa + " år</p>";
+  var s = "";
+  if(alder < 60) s = " (jf. tilbagetrækningsreformen)";
+  return "<p>Ud fra din alder forventes din pensionsalder at være omkring: " + pa + " år" + s + "</p>";
 }
 
 function Radio(radio) {
@@ -752,9 +754,9 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Del på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Del på Facebook</a></div>";
 
     if (mio >= 0) {
-      document.getElementById("p1").innerHTML += "<p>Det svarer til et overskud på <b>" + kr + " kr</b> pr. leveår.</p>"
+      document.getElementById("p1").innerHTML += "<p>Det svarer til et overskud på <b>" + kr + " kr.</b> pr. leveår.</p>"
     } else {
-      document.getElementById("p1").innerHTML += "<p>Det svarer til et underskud på <b>" + kr + " kr</b> pr. leveår.</p>"
+      document.getElementById("p1").innerHTML += "<p>Det svarer til et underskud på <b>" + kr + " kr.</b> pr. leveår.</p>"
     }
 
     var overskudText = "<p>";
@@ -764,7 +766,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       } else {
         overskudText += "Du blev økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       }
-      overskudText += "Fra det tidspunkt har du betalt mere til fælleskassen, end du har kostet. Men man kan stadig nå at gå i minus. Når man bliver ældre, gør på pension og før større risiko for at komme på hospitalet, kan man blive en samlet underskudsforretning for staten. ";
+      overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Men du kan stadig nå at gå i minus. Når man bliver ældre, går på pension og får større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet, kan man blive en samlet underskudsforretning for staten. ";
       if (mio > 0) { //samlet overskud
         overskudText += "Det sker dog ikke for dig givet de indtastede oplysninger.</p>";
       } else { //samlet underskud, angiv hvornår man gør i underskud
@@ -775,34 +777,25 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
         }
       }
     } else { //har været i (akkumuleret) rød hele vejen
-      overskudText += "<p>Du kommer heller ikke til at være en samlet overskudsforretning undervejs. Tværtimod. Når man bliver ældre, gør på pension og får større risiko for at komme på hospitalet, stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.</p>";
+      overskudText += "<p>Du kommer heller ikke til at være en samlet overskudsforretning undervejs. Det skyldes, at når man bliver ældre, går man typisk på pension og samtidigt er der større risiko for at komme på hospitalet. Derfor stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.</p>";
     }
     document.getElementById("p1").innerHTML += overskudText;
 
     var pensionsTid = maxLevealder - pensionsAlder;
-    var ss = ".";
-    if(pensionsTid >= 16 && pensionsTid <= 17) {
-      ss = ", hvilket er noget længere end de ca. 15 år, som tilbagetrækningsreformen sigter mod.";
-    }
-    else if(pensionsTid >= 18 && pensionsTid <= 19) {
-      ss = ", hvilket er en del længere end de ca. 15 år, som tilbagetrækningsreformen sigter mod.";
-    }
-    else if(pensionsTid >= 20) {
-      ss = ", hvilket er væsentligt længee end de ca. 15 år, som tilbagetrækningsreformen sigter mod.";
-    }
 
     var text2 = "<p>Med de oplysninger, du har angivet, kan du statistisk set forvente at blive <b>" + maxLevealder + " år</b> gammel. Inden da vil en gennemsnitlig dansker som dig ";
     text2 += "fra 18-års alderen have brugt <b>" + ToFixed(alderUddSlut - 18, 0) + "</b> år på (færdiggjort) uddannelse og have været ledig, syg eller på (barsels)orlov i <b>" + ToFixed(ledig_syg_ialt, 1) + " år.</b> ";
-    text2 += "Du forventes at være pensionist i "+ pensionsTid + " år" + ss;
+    text2 += "Du forventes at være pensionist i <b>"+ pensionsTid + " år</b>.";
     text2 += "</p>";
     document.getElementById("p1").innerHTML += text2;
 
-    var text3 = "<p>På grafen herunder kan du se, hvornår i livet du bidrager til samfundet, og hvornår du koster penge. Rød betyder, at du for den alder er en underskudsforretning for ";
-    text3 += "samfundet. Gul betyder, at du gør ca. i nul. Grøn betyder, at du betaler mere end du koster.<p>";
+    var text3 = "<p>På grafen herunder kan du se, hvornår i livet du bidrager til de offentlige kasser, og hvornår du koster penge. Rød betyder, at du i den alder er en underskudsforretning for ";
+    text3 += "de offentlige kasser. Gul betyder, at du går ca. i nul. Grøn betyder, at du betaler mere, end du koster.<p>";
     document.getElementById("p1").innerHTML += text3;
 
-    var text4 = "<p>Resultatet er en gennemsnitsbetragtning ud fra dine oplysninger, så du kan både være en bedre eller dårligere forretning for samfundet, end resultatet viser. Beregningen tager ikke stilling til fx fordelings- eller ressourcespårgsmål mv. Heller ikke om personen eksempelvis er forsørger eller på anden måde bidrager positivt til samfundet. Beregningerne siger ligeledes ikke noget om, hvor meget en person med de pågældende karakteristika bidrager til de offentlige finanser, når de indvandrer til Danmark senere i livet. Derudover er beregningerne foretaget under antagelse af, at den pågældende person gennemlever hele sit liv med den nuværende indretning af skatte-, overfårselssystem m.v.</p>";
-    text4 += "<p>Beregningen er udført ud fra tal og metoder venligst stillet til rådighed af <a href=\"http://www.da.dk\">DA</a> og <a href=\"http://www.dreammodel.dk\">DREAM</a> og sammenstillet af konsulent Thomas Thomsen. Du kan læse mere om beregningsmetoder og -forudsætninger <a href=\"metoder.html\">her</a>.</p>";
+    var text4 = "<p>Beregningerne er behæftet med usikkerhed, og beregningene giver udelukkende et approksimativt overslag over personens træk på de offentlige kasser og siger eksempelvis ikke noget om, hvorvidt personen bidrager til samfundet på andre måder end det rent økonomiske mellemværende med staten.  Resultatet er baseret på gennemsnitsoplysninger om træk på offentligt forbrug og indkomstoverførsler ud fra de få oplysninger, du har angivet. Så du kan både være en bedre og dårligere forretning for de offentlige kasser, end resultatet viser. Du kan f.eks. have været i gang med flere uddannelser eller fået dyr behandling for alvorlig sygdom end en gennemsnitsperson med samme køn, alder og uddannelse. ";
+    text4 += "Beregningerne siger ligeledes ikke noget om, hvor meget en person med lignende uddannelsesniveau mv. bidrager til de offentlige finanser, hvis personen indvandrer til Danmark. Derudover er beregningerne foretaget under antagelse af, at man gennemlever hele sit liv med den nuværende indretning af skatte-, overfårselssystem m.v.</p>";
+    text4 += "<p>Beregningen er udført ud fra baggrundsdata mv. venligst stillet til rådighed af <a href=\"http://www.da.dk\">DA</a> og <a href=\"http://www.dreammodel.dk\">DREAM</a> og sammenstillet af konsulent Thomas Thomsen. Du kan læse mere om beregningsmetoder og -forudsætninger <a href=\"metoder.html\">her</a>.</p>";
     document.getElementById("p2").innerHTML = text4;
 
 
