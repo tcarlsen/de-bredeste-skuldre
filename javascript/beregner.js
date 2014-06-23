@@ -19,7 +19,7 @@ function Beregner_init() {
   Radio(1);  //default = midterste radio-button
 }
 
-function GetIndkomst50(koen, hf, alder, radio) {    
+function GetIndkomst50(koen, hf, alder, radio) {
     //NB: samme data ligger andetsteds
     var y_m_skole = [119949, 143772, 161413, 172137, 183107, 199737, 223515, 242726, 258260, 267717, 276622, 285148, 291371, 296361, 297622, 301796, 305646, 311639, 315487, 321995, 327906, 333264, 336451, 337745, 337820, 335786, 334825, 335181, 335655, 336654, 336762, 337674, 337722, 338708, 338198, 337837, 336853, 336696, 334737, 333245, 327931, 326075, 322713, 324965, 324511, 313277, 298478, 280438, 265929, 251261, 232726, 222067, 208694, 201923, 193136, 185016, 180983, 179582];
     var y_m_almgym = [105912, 115347, 117980, 115601, 114672, 123305, 141398, 169273, 199437, 226077, 249323, 268524, 290027, 304615, 322290, 333858, 343310, 355361, 359549, 369869, 369511, 376628, 385550, 394423, 407549, 416279, 421747, 421881, 421574, 422824, 422361, 425797, 426633, 424423, 417088, 411814, 404786, 403104, 401837, 403542, 401083, 397828, 398013, 394252, 385572, 379202, 386729, 386277, 373809, 347923, 311685, 307065, 293280, 264756, 215814, 161681, 166525, 150304];
@@ -28,7 +28,7 @@ function GetIndkomst50(koen, hf, alder, radio) {
     var y_m_kortvidereg = [142219, 142219, 148578, 159805, 180253, 211657, 251125, 290140, 318865, 340329, 354932, 366552, 375713, 386616, 396366, 405987, 415359, 425313, 431624, 437635, 441551, 445559, 446308, 445774, 449270, 449272, 449233, 445850, 442178, 442383, 442025, 442588, 438052, 434395, 432689, 430245, 426226, 422325, 417998, 415263, 412304, 409235, 405598, 391988, 374629, 351536, 334548, 309152, 279902, 254183, 237451, 222929, 210582, 193308, 200270, 195168, 211379, 209172];
     var y_m_mellemvidereg = [109426, 109426, 169259, 243782, 317870, 326786, 325095, 328413, 340803, 353900, 364641, 374198, 382748, 390315, 399003, 405141, 413219, 420112, 430542, 438356, 448850, 457969, 470957, 480798, 485761, 490334, 497241, 503863, 508116, 510750, 510697, 510681, 502412, 498884, 488406, 483044, 474557, 469491, 461406, 455541, 448482, 446080, 442402, 437761, 433883, 426069, 414226, 381149, 348319, 314875, 285813, 252529, 219934, 206455, 198220, 196863, 202684, 202395];
     var y_m_bachelor = [108771, 108771, 108771, 107217, 106910, 108624, 118297, 132412, 152905, 172558, 208726, 249304, 295054, 326527, 355418, 370485, 388038, 398665, 420529, 437193, 452587, 463860, 466482, 472336, 472966, 474763, 480844, 494504, 505561, 501209, 497967, 508749, 515453, 507672, 502329, 486997, 486906, 469668, 458635, 448388, 447791, 450692, 443752, 441682, 435914, 428313, 388893, 364988, 337231, 335765, 336962, 313993, 314014, 320285, 314189, 256835, 214987, 191069];
-    var y_m_langvidereg = [393790, 393790, 393790, 393790, 371740, 351330, 339288, 351366, 366919, 378866, 394442, 412229, 431674, 451805, 471742, 486778, 500620, 513185, 527492, 545223, 558037, 575501, 585403, 600448, 609220, 619704, 622835, 627614, 630265, 636162, 633770, 632723, 634142, 641050, 641325, 640612, 632315, 626192, 615262, 608498, 600933, 593272, 581931, 570869, 557225, 545354, 532731, 521024, 500747, 464731, 417328, 362906, 315151, 278332, 255630, 246557, 253266, 233772];  
+    var y_m_langvidereg = [393790, 393790, 393790, 393790, 371740, 351330, 339288, 351366, 366919, 378866, 394442, 412229, 431674, 451805, 471742, 486778, 500620, 513185, 527492, 545223, 558037, 575501, 585403, 600448, 609220, 619704, 622835, 627614, 630265, 636162, 633770, 632723, 634142, 641050, 641325, 640612, 632315, 626192, 615262, 608498, 600933, 593272, 581931, 570869, 557225, 545354, 532731, 521024, 500747, 464731, 417328, 362906, 315151, 278332, 255630, 246557, 253266, 233772];
     var y_k_skole = [94195, 116446, 135722, 148650, 153524, 160052, 173393, 188942, 202022, 210641, 215936, 221011, 225096, 228500, 232177, 236288, 242377, 247221, 251240, 253714, 257700, 260950, 265624, 266832, 268157, 268829, 270740, 272836, 274021, 275510, 277645, 280348, 282345, 283573, 284668, 285278, 286377, 286867, 287689, 286056, 278594, 276101, 271447, 273984, 270998, 257639, 247754, 233471, 229078, 212030, 201573, 188229, 178412, 164244, 159165, 155743, 157286, 163009];
     var y_k_almgym = [117931, 117624, 112767, 106251, 103667, 110625, 124701, 141513, 160154, 182241, 204410, 222907, 235671, 245516, 254060, 260390, 267313, 270383, 277451, 281947, 291602, 297351, 305665, 311652, 317420, 325897, 332693, 338123, 335580, 337963, 337699, 339507, 338355, 341953, 339293, 341345, 338293, 340744, 340310, 339546, 341921, 345209, 347666, 347418, 339406, 322422, 316365, 297830, 294300, 275105, 250884, 203604, 166880, 203638, 263246, 241080, 242739, 217304];
     var y_k_erhgym = [145970, 140546, 131902, 124724, 122853, 133190, 150296, 175528, 199347, 221116, 237403, 249590, 258796, 266602, 275384, 285354, 300454, 312189, 321485, 321657, 324357, 329889, 334556, 338453, 342769, 346970, 351110, 354303, 355672, 354576, 352688, 354011, 353850, 353033, 351717, 355429, 359333, 363513, 363037, 345145, 334019, 328232, 350995, 367038, 362641, 344259, 326883, 303508, 272940, 241753, 244364, 227062, 250888, 236595, 208218, 192637, 145582, 273744];
@@ -37,7 +37,7 @@ function GetIndkomst50(koen, hf, alder, radio) {
     var y_k_mellemvidereg = [277208, 277208, 277208, 288670, 291730, 296903, 291148, 295450, 297811, 299900, 302106, 305495, 309837, 313443, 318376, 322939, 328942, 333960, 338893, 343692, 348801, 354468, 358331, 360872, 362896, 365119, 367782, 370577, 373784, 375809, 376587, 376182, 376393, 377494, 378588, 379836, 381362, 383021, 383555, 382318, 378127, 377716, 373390, 371229, 366905, 349907, 328167, 298009, 279841, 251821, 225577, 205235, 186623, 175789, 161078, 160956, 152122, 151481];
     var y_k_bachelor = [106397, 106397, 103671, 100985, 99162, 102226, 107591, 118620, 133509, 157363, 187859, 218786, 252777, 278036, 298885, 309786, 317270, 326560, 336566, 347609, 356741, 356643, 355154, 351642, 354220, 356444, 362003, 366937, 372358, 370658, 369407, 363510, 356522, 352882, 353712, 352036, 346265, 346293, 341467, 341850, 337819, 338790, 331081, 314850, 320013, 313033, 309560, 272763, 263850, 240229, 238503, 223832, 206676, 235745, 159985, 104427, 102144, 132521];
     var y_k_langvidereg = [320830, 320830, 320830, 316862, 311135, 310342, 315703, 327218, 336021, 346313, 354248, 365393, 377124, 389483, 398191, 407195, 416630, 426772, 435309, 442352, 451292, 460677, 471148, 478805, 485585, 492192, 500437, 505756, 509582, 511387, 511318, 510816, 511249, 517175, 520705, 522250, 517264, 512434, 508174, 508539, 507987, 503702, 492457, 481010, 477287, 462249, 449410, 433725, 410849, 395541, 351868, 315392, 272201, 241052, 216900, 205455, 192150, 195100];
-    
+
     //NB: samme logik findes andetsteds
     var y = null;
     var alderUddSlut = Number.NaN;
@@ -134,7 +134,7 @@ function GetIndkomst50(koen, hf, alder, radio) {
     indkomst50 = -55555;
   }
   else {
-  
+
     var indkomst50 = Number.NaN;
 
     if(radio == 0) {
@@ -145,7 +145,7 @@ function GetIndkomst50(koen, hf, alder, radio) {
     }
     else {
       indkomst50 = y[50 - 18] * (1+pensionsBidrag);
-    }    
+    }
   }
 
   return indkomst50;
@@ -211,18 +211,18 @@ function Parametre(frm) {
   var udland2 = document.getElementById("udland2").selectedIndex;
   var koen = document.getElementById("select1").selectedIndex;
   var hf = document.getElementById("select2").selectedIndex;
-  var pensionsAlder = 60 + document.getElementById("pensionsAlder").selectedIndex;  
+  var pensionsAlder = 60 + document.getElementById("pensionsAlder").selectedIndex;
   var indkomst50 = Number.NaN;
   if(!IsDigits(frm.indkomst50.value)) {
-    indkomst50 = -55555;  
+    indkomst50 = -55555;
   }
   else {
-    indkomst50 = parseInt(frm.indkomst50.value);  
-  } 
+    indkomst50 = parseInt(frm.indkomst50.value);
+  }
   var radio = 0;
   if (document.getElementById("radio0").checked) radio = 0;
   else if (document.getElementById("radio1").checked) radio = 1;
-  else if (document.getElementById("radio2").checked) radio = 2;  
+  else if (document.getElementById("radio2").checked) radio = 2;
   var nettobidrag = Beregn(koen, alder, hf, indkomst50, ledig_syg, udland1, udland2, pensionsAlder, radio, 1);
   return;
 }
@@ -243,7 +243,7 @@ function PensionsText(alder) {
   var pa = Number.NaN;
   var x = [75,75,75,75,75,75,75,75,75,74,74,74,74,74,74,74,74,74,73,73,73,73,73,73,73,73,73,72,72,72,72,72,72,72,72,72,71,71,71,71,70,70,70,70,69,69,69,69,68,68,68,68,67,67,67,67,67,67,67,66,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65];
   if(alder > 77) pa = 67;
-  else pa = x[alder];    
+  else pa = x[alder];
   return "<p>Ud fra din alder forventes folkepensionsalderen at være: " + pa + " år</p>";
 }
 
@@ -257,27 +257,27 @@ function Radio(radio) {
   }
   else {
     s = "Indtast dernæst din maksimale månedlige lønindkomst i løbet af dit arbejdsliv (inkl. pension, bonus m.v.):"
-  } 
+  }
   document.getElementById("indkomst_text2").innerHTML = s;
 }
 
-function Parametre2(frm) {      
-  var alder = document.getElementById("alder").selectedIndex;  
-  
+function Parametre2(frm) {
+  var alder = document.getElementById("alder").selectedIndex;
+
   /*
   var koen = document.getElementById("select1").selectedIndex;
   var hf = document.getElementById("select2").selectedIndex;
   var radio = 0;
   if (document.getElementById("radio0").checked) radio = 0;
   else if (document.getElementById("radio1").checked) radio = 1;
-  else if (document.getElementById("radio2").checked) radio = 2;    
-  var y = Number.NaN;  
-  y = GetIndkomst50(koen, hf, alder, radio);    
+  else if (document.getElementById("radio2").checked) radio = 2;
+  var y = Number.NaN;
+  y = GetIndkomst50(koen, hf, alder, radio);
   var y2 = Math.round(y / 12 / 1000) * 1000;
   if(y == -55555) y2 = -55555;
-  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(y2); 
+  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(y2);
   */
-  
+
   document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(-55555);
   document.getElementById("pensionsAlder2").innerHTML = PensionsText(alder);
   return y;
@@ -336,7 +336,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
   var restleve_m = [90,89,88,87,85,84,83,82,81,80,79,78,76,75,74,73,72,71,70,69,67,66,65,64,63,62,61,60,58,57,56,55,54,53,52,51,49,48,47,46,45,44,43,42,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,18,17,16,15,14,13,13,12,11,11,10,9,9,8,8,7,7,6,6,5,5,5,4,4,4,3,3,3,3,2,2,2,2];
   var restleve_k = [91,91,89,88,87,86,85,84,83,82,81,80,78,77,76,75,74,73,72,71,70,68,67,66,65,64,63,62,61,60,58,57,56,55,54,53,52,51,50,48,47,46,45,44,43,42,41,40,39,38,36,35,34,33,32,31,30,29,28,27,26,25,24,23,23,22,21,20,19,18,17,16,16,15,14,13,13,12,11,10,10,9,9,8,8,7,7,6,6,5,5,5,4,4,4,3,3,3,3,2];
-  
+
   //NB: samme data ligger andetsteds
   var y_m_skole = [119949, 143772, 161413, 172137, 183107, 199737, 223515, 242726, 258260, 267717, 276622, 285148, 291371, 296361, 297622, 301796, 305646, 311639, 315487, 321995, 327906, 333264, 336451, 337745, 337820, 335786, 334825, 335181, 335655, 336654, 336762, 337674, 337722, 338708, 338198, 337837, 336853, 336696, 334737, 333245, 327931, 326075, 322713, 324965, 324511, 313277, 298478, 280438, 265929, 251261, 232726, 222067, 208694, 201923, 193136, 185016, 180983, 179582];
   var y_m_almgym = [105912, 115347, 117980, 115601, 114672, 123305, 141398, 169273, 199437, 226077, 249323, 268524, 290027, 304615, 322290, 333858, 343310, 355361, 359549, 369869, 369511, 376628, 385550, 394423, 407549, 416279, 421747, 421881, 421574, 422824, 422361, 425797, 426633, 424423, 417088, 411814, 404786, 403104, 401837, 403542, 401083, 397828, 398013, 394252, 385572, 379202, 386729, 386277, 373809, 347923, 311685, 307065, 293280, 264756, 215814, 161681, 166525, 150304];
@@ -572,22 +572,22 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   // -----------------------------------------------------------
 
   if (alder < 18) {
-    if (ledig_syg1 > 0) fejltext += " Antal år som arbejdsløs, sygemeldt eller på (barsels)orlov siden 18-års alderen skal sættes til 0, hvis du er yngre end 18 år.";
-    if (udland2 > 0) fejltext += " Antal år som du har boet i udlandet siden 18-års-alderen skal sættes til 0, hvis du er yngre end 18 år.";
+    if (ledig_syg1 > 0) fejltext += "<p class=\"dbs-error\">Antal år som arbejdsløs, sygemeldt eller på (barsels)orlov siden 18-års alderen skal sættes til 0, hvis du er yngre end 18 år.</p>";
+    if (udland2 > 0) fejltext += "<p class=\"dbs-error\">Antal år som du har boet i udlandet siden 18-års-alderen skal sættes til 0, hvis du er yngre end 18 år.</p>";
   } else {
     // >= 18 år
-    if ((alder - 17) < ledig_syg1) fejltext += " Antal år som arbejdsløs, sygemeldt eller på (barsels)orlov siden 18-års alderen er for højt givet din nuværende alder: sæt antallet ned.";
-    if ((alder - 17) < udland2) fejltext += " Antal år som du har boet i udlandet siden 18-års-alderen er for højt givet din nuværende alder: sæt antallet ned.";
+    if ((alder - 17) < ledig_syg1) fejltext += "<p class=\"dbs-error\">Antal år som arbejdsløs, sygemeldt eller på (barsels)orlov siden 18-års alderen er for højt givet din nuværende alder: sæt antallet ned.</p>";
+    if ((alder - 17) < udland2) fejltext += "<p class=\"dbs-error\">Antal år som du har boet i udlandet siden 18-års-alderen er for højt givet din nuværende alder: sæt antallet ned.</p>";
   }
 
-  if (udland1 > alder) fejltext += " Antal år som du har boet i udlandet inden 18-års-alderen skal være mindre end din nuværende alder.";
+  if (udland1 > alder) fejltext += "<p class=\"dbs-error\">Antal år som du har boet i udlandet inden 18-års-alderen skal være mindre end din nuværende alder.</p>";
 
   //lignende tjeks findes andetsteds
-  if(alder < 18 && radio != 0) fejltext += " Hvis du er yngre end 18 år, skal du vælge 'Du er i gang med en uddannelse' under indkomst.";    
-  if(alder > pensionsAlder && radio != 2) fejltext += " Hvis du er ældre end din angivne pensionsalder, skal du vælge 'Du er pensionist' under indkomst.";    
-  if (indkomst50 == -55555)  fejltext += " Indkomsten skal angives som et heltal (uden komma eller punktum), f.eks. 31000.";  
-  else if (indkomst50 <= 0) fejltext += " Forventet indkomst skal være større end 0.";  
-    
+  if(alder < 18 && radio != 0) fejltext += "<p class=\"dbs-error\">Hvis du er yngre end 18 år, skal du vælge 'Du er i gang med en uddannelse' under indkomst.</p>";
+  if(alder > pensionsAlder && radio != 2) fejltext += "<p class=\"dbs-error\">Hvis du er ældre end din angivne pensionsalder, skal du vælge 'Du er pensionist' under indkomst.</p>";
+  if (indkomst50 == -55555)  fejltext += "<p class=\"dbs-error\">Indkomsten skal angives som et heltal (uden komma eller punktum), f.eks. 31000.</p>";
+  else if (indkomst50 <= 0) fejltext += "<p class=\"dbs-error\">Forventet indkomst skal være større end 0.</p>";
+
   // -----------------------------------------------------------
   // Checks slut
   // -----------------------------------------------------------
@@ -597,14 +597,14 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       if(i < 50 && factor < 0.6) y[i - 18] = 0.6 * y[50 - 18];
       if(i > 50 && factor < 0.85) y[i - 18] = 0.85 * y[50 - 18];
   }
-  
+
   for (var i = 18; i <= pensionsAlder; i++) {
     if (i < alderUddSlut) {
       if (i <= 19) indkomst[i] = SUFribeloebPrAar1;
       else indkomst[i] = SUFribeloebPrAar2;
-    } 
+    }
     else {
-      if(radio == 0) {        
+      if(radio == 0) {
         indkomst[i] = y[i - 18] / y[alderUddSlut + 2 - 18] * indkomst50prAar;
       }
       else if(radio == 1) {
@@ -694,7 +694,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   if (output == 1) {
 
     if (fejltext != "") {
-      document.getElementById("p1").innerHTML = "<p style=\"color:red;\">" + fejltext + " Prøv igen.</p>";
+      document.getElementById("p1").innerHTML = fejltext;
       document.getElementById("graf").innerHTML = "";
       document.getElementById("labels").innerHTML = "";
       document.getElementById("p2").innerHTML = "";
@@ -790,7 +790,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     else if(pensionsTid >= 20) {
       ss = ", hvilket er væsentligt længee end de ca. 15 år, som tilbagetrækningsreformen sigter mod.";
     }
-    
+
     var text2 = "<p>Med de oplysninger, du har angivet, kan du statistisk set forvente at blive <b>" + maxLevealder + " år</b> gammel. Inden da vil en gennemsnitlig dansker som dig ";
     text2 += "fra 18-års alderen have brugt <b>" + ToFixed(alderUddSlut - 18, 0) + "</b> år på (færdiggjort) uddannelse og have været ledig, syg eller på (barsels)orlov i <b>" + ToFixed(ledig_syg_ialt, 1) + " år.</b> ";
     text2 += "Du forventes at være pensionist i "+ pensionsTid + " år" + ss;

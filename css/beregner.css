@@ -59,6 +59,11 @@
   padding: 9px 20px;
 }
 
+.dbs-error {
+  color: red;
+  margin: 0 !important;
+}
+
 .float-wrap {
   width: 100%;
 }
