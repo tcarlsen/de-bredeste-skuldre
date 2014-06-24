@@ -17,6 +17,7 @@
           <option>Kvinde</option>
         </select>
       </div>
+      <br>
       <div class="dbs-form-item">
         <label for="alder">Hvor gammel er du?</label>
         <select id="alder" onchange="Parametre2(this.form)">
@@ -332,13 +333,13 @@
       </div>
       <button onclick="Parametre(this.form)" class="dbs-submit" type="button">Beregn</button>
     </form>
-    <button onclick="VisInputForm()" id="udfold" class="dbs-submit" style="display:none">Ret oplysninger</button>
-    <div class="dbs-result">
+    <div id="result" class="dbs-result">
       <p id="p1"></p>
       <div id="graf"></div>
       <div id="labels"></div>
       <p id="p2"></p>
     </div>
+    <button onclick="VisInputForm()" id="udfold" class="dbs-submit" style="display:none">Ret oplysninger og forsøg igen</button>
   </div>
 
   <script src="javascript/beregner.js"></script>

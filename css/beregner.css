@@ -3,29 +3,27 @@
 }
 
 .dbs-header {
-  background-color: rgba(0,0,0,0.8);
-  font-family: b-sans-eb;
-  color: #ccc;
-  padding: 0 20px;
+  font-size: 64px;
+  padding: 10px 20px 0 20px;
+  margin: 0;
 }
 
 .dbs-desc {
-  padding: 9px 20px;
-  width: 610px;
-  font-size: 21px;
-  line-height: 29px;
+  padding: 0 20px 9px 20px;
+  font-size: 24px !important;
+  line-height: 30px !important;
 }
 
 .dbs-form-item {
-  display: block;
-  background-color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 9px 20px;
   margin: 9px 0;
 }
 
 .dbs-form-item label {
   font-family: b-sans-r;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: normal;
   padding-bottom: 3px;
 }
@@ -47,7 +45,7 @@
   font-size: 36px;
   font-family: b-sans-eb;
   padding: 7px 17px;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.8);
   border: none;
   border-radius: 6px;
   margin: 10px 20px;
@@ -55,13 +53,12 @@
 }
 
 .dbs-result {
-  background-color: rgba(255,255,255,0.9);
   padding: 9px 20px;
 }
 
 .dbs-error {
-  color: red;
   margin: 0 !important;
+  color: #fff;
 }
 
 .dbs-facebook {
@@ -144,7 +141,7 @@
   background-color: #01804f;
 }
 .colorg1 {
-  background-color: #008bf6;
+  background-color: #038956;
 }
 .colorg2 {
   background-color: #008d58;

@@ -700,7 +700,10 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       document.getElementById("graf").innerHTML = "";
       document.getElementById("labels").innerHTML = "";
       document.getElementById("p2").innerHTML = "";
+      document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";
       return;
+    } else {
+      document.getElementById("result").style.backgroundColor = "rgba(255,255,255,0.8)";
     }
 
     var u = "";
