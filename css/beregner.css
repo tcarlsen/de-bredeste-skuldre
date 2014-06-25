@@ -1,5 +1,5 @@
 .dbs-container {
-  background-image: url(/upload/3rd-party/de-bredeste-skuldre/images/cover-3.jpg);
+  background-image: url(/upload/3rd-party/de-bredeste-skuldre/images/cover-5.jpg);
   padding-bottom: 20px;
 }
 
@@ -57,6 +57,10 @@
   padding: 9px 20px;
 }
 
+.dbs-result p {
+  font-size: 19px;
+}
+
 .dbs-error {
   margin: 0 !important;
   color: #fff;
@@ -75,13 +79,31 @@
 }
 
 .dbs-result-header {
-  font-family: b-serif-eb;
-  font-size: 30px !important;
-  line-height: 56px !important;
-  padding-left: 65px;
+  font-family: b-serif-eb !important;
+  font-size: 45px !important;
+  line-height: 52px !important;
 }
 
-#p1 b {
+.dbs-higlight {
+  font-size: 24px !important;
+  line-height: 28px !important;
+}
+
+.dbs-higlight b {
+  font-size: 27px !important;
+}
+
+.dbs-small {
+  font-size: 15px !important;
+}
+
+#p1 img {
+  float: left;
+  margin-right: 15px;
+  width: 150px;
+}
+
+#p1 b, #p2 b {
   font-family: b-sans-eb;
   font-size: 20px;
 }
