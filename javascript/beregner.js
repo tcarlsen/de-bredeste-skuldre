@@ -10,7 +10,10 @@ if (window.onload) {
 
 function VisInputForm(num, fixed) {
   document.getElementById("form").style.display = "block";
+  document.getElementById("dbs-header").style.display = "block";
+  document.getElementById("dbs-desc").style.display = "block";
   document.getElementById("udfold").style.display = "none";
+  document.getElementById("result").style.display = "none";
 }
 
 function Beregner_init() {
@@ -746,12 +749,11 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     //bemærk: denne kr variabel en en streng, og det er den absolutte værdi. Variablen mio indeholder fortegnet.
     var kr = FormatNumber(100 * Math.round(Math.abs(nettobidragKumuleret[maxLevealder] / maxLevealder / 100)));
-    document.getElementById("p1").innerHTML = "<p>Resultat:</p>";
 
     if (mio >= 0) {
-      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-up.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du giver samfundet et overskud på " + mio + " mio. kr</b></p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-up.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p class=\"dbs-result-header\">Vi forventer, at du giver samfundet et overskud på " + mio + " mio. kr</p>";
     } else {
-      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p style=\"font-size: 125%\"><b>&nbsp;&nbsp;Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</b></p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\" style=\"float:left;\"><p class=\"dbs-result-header\">Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</p>";
     }
 
     document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Del på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Del på Facebook</a></div>";
@@ -809,7 +811,10 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   // ===============================================
 
   document.getElementById("form").style.display = "none";
+  document.getElementById("dbs-header").style.display = "none";
+  document.getElementById("dbs-desc").style.display = "none";
   document.getElementById("udfold").style.display = "block";
+  document.getElementById("result").style.display = "block";
 
   return nettobidrag;
 }

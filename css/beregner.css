@@ -1,5 +1,6 @@
 .dbs-container {
   background-image: url(/upload/3rd-party/de-bredeste-skuldre/images/cover-3.jpg);
+  padding-bottom: 20px;
 }
 
 .dbs-header {
@@ -71,6 +72,18 @@
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   font-weight: 600;
+}
+
+.dbs-result-header {
+  font-family: b-serif-eb;
+  font-size: 30px !important;
+  line-height: 56px !important;
+  padding-left: 65px;
+}
+
+#p1 b {
+  font-family: b-sans-eb;
+  font-size: 20px;
 }
 
 .float-wrap {
