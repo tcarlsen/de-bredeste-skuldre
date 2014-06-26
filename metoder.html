@@ -17,37 +17,38 @@
   <p>Her gennemgås de metoder og forudsætninger, der ligger til grund for beregningerne på "Er du økonomisk bæredygtig"-siden.</p>
   <p>Beregneren tager udgangspunkt i det såkaldte generationsregnskab fra DREAM, som bl.a. foretager en køns- og aldersopdeling på personer af forskellige offentlige indtægter og udgifter. Indtægterne er bla. personskatter, arbejdsmarkedsbidrag, moms og
     afgifter, bil- og ejendomsskatter, selskabsskatter, kapitalskatter mv. Udgifterne går bl.a. til overfårsler såsom dagpenge og kontanthjølp, sygedagpenge, (barsels)orlov, SU, pensioner mv. samt udgifter til undervisning, sundhed, social velfærd, infrastruktur,
-    anlægsinvesteringer, institutioner oma. Offentlige indtægter minus udgifter svarer til den offentlige saldo (statsover-/underskud).</p>
+    anlægsinvesteringer, institutioner mv. Offentlige indtægter minus udgifter svarer til den offentlige saldo (statsover-/underskud).</p>
   <p>Beregneren forsøger at erstatte nogle af de personrelaterede af disse indtægter og udgifter med tal dannet ud fra brugerens input. En vigtig antagelse er, at det forudsættes at personen gennemlever hele sit liv med den nuværende indretning af skatte-,
-    overførselssystem m.v. Der er således ikke taget eksplicit hensyn til f.eks. tilbagetrækningsreformen (forøget pensionsalder mm), og der er ligeledes heller ikke taget hensyn til, at de nuværende ældre generationer har haft en større skattebyrde (opbygning
-    af velfærdssamfundet). Analysen er således foretaget mere ud fra en tværsnitsbetragtning, end en generationsbetragtning.
+    overførselssystem m.v. Der er således ikke taget eksplicit hensyn til f.eks. tilbagetrækningsreformen (forøget pensionsalder m.m), og der er ligeledes heller ikke taget hensyn til, at de nuværende ældre generationer har haft en større skattebyrde (opbygning
+    af velfærdssamfundet). Med hensyn til tilbagetrækningsreformen angiver beregneren dog den forventede pensionsalder givet personens nuvæende alder; en forventet pensionsalder som afspejler intentionerne i velfærdsreformen (bl.a. at der sigtes mod 14,5 år som pensionist i gennemsnit:
+    for en 18-årig i 2014 er denne forventede pensionsalder 73 år). Mht. forventet levealder skal det også nævnes, at der bruges de såkaldte generationelle restlevetider, som er længere end de såkaldte periodiske restlevetider (med generationelle restlevetider forventes en dreng og pige født i 2014 at leve i 90 hhv. 91 år).
   </p>
-  <p>I det hele taget er beregnerens resultater meget approksimative, bl.a. fordi der kun indtastes et mindre antal parametre, mens resten af personens karakteristika forudsættes at være det samme som for en gennemsnitsperson. Desuden er selve beregningen
+  <p>I det hele taget er beregnerens resultater et forsimplet billede, som derfor også er behæftet med usikkerhed. Der bliver kun indtastet et mindre antal personlige karakteristike om den personen, som anvender beregneren, mens resten af personens karakteristika forudsættes at være det samme som for en gennemsnitsperson med samme køn, alder og uddannelse. Desuden er selve beregningen
     også meget simplificeret sammenlignet med en egentlig modelbaseret analyse foretaget af f.eks. DREAM eller en anden registerbaseret livsforløbsmodel.</p>
   <p>Metoden er i korte træk følgende:</p>
   <ul>
-    <li>Frem til 18-årsalderen tages tal direkte fra DREAMs generationsregnskab.</li>
-    <li>Fra 18-årsalderen antages det forsimplende, at personerne går i gang med den uddannelse, de ender med at fårdiggåre. Alt efter uddannelsestype tager dette et forskelligt antal år. Undervejs modtages der SU og arbejdes op til SU-fribeløbsgrænserne.</li>
-    <li>Efter færdiggjort uddannelse påbegyndes erhvervsarbejde frem til pensionsalderen. Indtægtsprofilen over tid afspejler gennemsnitlige indkomstprofiler (leveret af DA) for personer med samme køn, alder og uddannelse, mens selve niveauet er bestemt af
-      det tal, som brugeren taster ind. Denne indkomst vil alt andet lige være mindre, hvis personen arbejder mindre end fuld tid (så indkomstforskelle afspejler ikke kun timelønsforskelle). Der beregnes skat af denne indkomst ud fra et modul stillet
-      til rådighed af DA, og der tillægges et skøn for moms og afgifter ud fra efter-skat indkomsten.</li>
-    <li>Arbejdsmarkedstilknytningen opgåres ud fra køn, alder og uddannelse, og er baseret på arbejdsstyrkestatistikken (RAS). Der beregnes det antal år, man ud fra denne statistik må forventes at være uden beskæftigelse/lønarbejde frem til pensionsalderen,
-      og indtægter og udgifter justeres efter dette. Uden beskæftigelse skal her forstås som ledighed, sygdom, (barsels)orlov samt hvis man er under uddannelse. Det beregnede antal år er meget approksimativt, og man skal huske at eksempelvis en person
-      som i alderen 18-65 år har været uden for arbejdsmarkedet pga. f.eks. sygdom vil veje relativt tungt i de beregnede antal år for en gennemsnitlig person. Personer uden beskæftigelse modtager overfårselsindkomster.</li>
+    <li>Frem til 18-årsalderen tages tal direkte fra DREAMs generationsregnskab - her vil alle derfor være ens (med mindre der har været udlandsophold).</li>
+    <li>Fra 18-årsalderen antages det forsimplende, at personerne går i gang med den uddannelse, de ender med at fårdiggåre - og som er indtastet af brugeren. Alt efter uddannelsestype tager dette et forskelligt antal år. Undervejs modtages der SU og arbejdes op til SU-fribeløbsgrænserne.</li>
+    <li>Efter færdiggjort uddannelse påbegyndes erhvervsarbejde frem til pensionsalderen. Indtægtsprofilen over tid afspejler gennemsnitlige indkomstprofiler for personer med samme køn, alder og uddannelse, mens selve niveauet er bestemt af
+      det tal, som brugeren taster ind. Denne indkomst vil alt andet lige være mindre, hvis personen arbejder mindre end fuld tid. Der beregnes skat af denne indkomst ud fra et modul stillet
+      til rådighed af DA efter de skatteregler der gælder i 2014, og der tillægges et skøn for moms og afgifter ud fra efter-skat indkomsten.</li>
+    <li>Arbejdsmarkedstilknytningen opgåres ud fra køn, alder og uddannelse, og er baseret på Danmarks Statistiks arbejdsstyrkestatistik (RAS). Der beregnes det antal år, man ud fra denne statistik må forventes at være uden beskæftigelse/lønarbejde frem til pensionsalderen,
+      og indtægter og udgifter justeres efter dette. Uden beskæftigelse skal her forstås som ledighed, sygdom, (barsels)orlov samt hvis man er under uddannelse. Det beregnede antal år er meget approksimativt, og har en person
+      været uden for arbejdsmarkedet pga. f.eks. sygdom i alderen 18-65 år, vil det veje relativt tungt i de beregnede antal år for en gennemsnitlig person. Personer uden beskæftigelse modtager overfårselsindkomster - her er anvendt
+      gennemsnitlige overførselsindkomster for kontanthjælp og (syge)dagpenge, SU og folkepension.</li>
     <li>Mht. pension bruges nogle stiliserede pensionsbidragssatser undervejs frem til pensionsalderen, hvorefter pensionen fordeles jvnt ud over den resterende levetid. Der opereres ikke med afkast af pension, så set fra det offentliges synspunkt er pensionsbeskrivelsen
       stort set kun et spårgsmål om, at en del af personskatterne udskydes til pensionsalderen (dog til en lidt lavere marginalskat). Der tages ikke stilling til arveafgift o.lign. Personer i pensionsalderen antages at modtage folkepension (evt. kun grundbeløbet).</li>
     <li>Hvis der er udlandsophold, reduceres statens indtægter og udgifter proportionalt med antallet af år i udlandet.</li>
   </ul>
   <p>Mht. de enkelte inputfelter kan der knyttes nogle bemårkninger:</p>
   <ul>
-    <li>Den indtastede alder har følgende betydning. Dels betyder den noget for den forventede levealder, og dels har den betydning for ens arbejdsmarkedstilknytning (beskæftigelsesstatus). Hvis man eksempelvis er 40 år og har angivet, at man har været 0
+    <li>Den indtastede alder har følgende betydning. Dels betyder den noget for den forventede restlevetid, og dels har den betydning for ens arbejdsmarkedstilknytning (beskæftigelsesstatus). Hvis man eksempelvis er 40 år og har angivet, at man har været 0
       år arbejdslås, sygemeldt eller på (barsels)orlov efter man fyldte 18 år, vil dette 0 blive lagt til grund for beregningen frem til 40-årsalderen. Endelig har den angivne alder også betydning for, hvordan udlandsophold fordeles på alderstrin.</li>
-    <li>Uddannelsesniveauet (og kønnet) har betydning for arbejdsmarkedstilknytningen, som er bedre jo højere uddannelsen er. Endvidere har uddannelsen betydning for ens indkomstprofil på alderstrin.</li>
+    <li>Uddannelsesniveauet (og kønnet) har betydning for arbejdsmarkedstilknytningen, som er større jo højere uddannelsen er. Endvidere har uddannelsen betydning for ens indkomstprofil på alderstrin.</li>
     <li>Mht. udlandsophold opdeles i om det er får eller efter 18 år. Denne skelnen har ret stor betydning for statskassen, idet man typisk er en ren udgift for staten får 18-årsalderen. Det antages implicit, at man forbliver i Danmark efter sin nuværende
       alder (dvs. fremover).</li>
-    <li>Indkomsten angives for at kunne ligge et fornuftigt niveau for det aldersfordele forløb af denne. Der angives for 50-årsalderen, fordi det typisk er omkring denne alder, at personens indkomst topper. Den angivne indkomst skal afspejle eventuel deltid
-      (og indeholde pension, bonus mv.) og beregneren angiver selv et gennemsnitsestimat for denne (ud fra køn og uddannelse). Estimatet er primårt tiltænkt (yngre) brugere, som muligvis ikke har nogen sårligt god ide om deres indkomstniveau som 50-årige.
-      Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</li>
+    <li>Indkomsten angives for at kunne ligge et fornuftigt niveau for det aldersfordelte forløb af denne. Der angives nuværende indkomst, undtagen hvis man er under uddannelse eller pensionist (hvor der angives forventet indkomst efter uddannelse hhv. den maksimalt opnåede indkomst). Den angivne indkomst skal afspejle eventuel deltid
+      (og indeholde pension, bonus mv.). Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</li>
   </ul>
 </body>
 </html>

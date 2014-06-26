@@ -17,141 +17,9 @@ function VisInputForm(num, fixed) {
 }
 
 function Beregner_init() {
-  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(-55555);
+  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText();
   document.getElementById("pensionsAlder2").innerHTML = PensionsText(-55555);
   Radio(1);  //default = midterste radio-button
-}
-
-function GetIndkomst50(koen, hf, alder, radio) {
-    //NB: samme data ligger andetsteds
-    var y_m_skole = [119949, 143772, 161413, 172137, 183107, 199737, 223515, 242726, 258260, 267717, 276622, 285148, 291371, 296361, 297622, 301796, 305646, 311639, 315487, 321995, 327906, 333264, 336451, 337745, 337820, 335786, 334825, 335181, 335655, 336654, 336762, 337674, 337722, 338708, 338198, 337837, 336853, 336696, 334737, 333245, 327931, 326075, 322713, 324965, 324511, 313277, 298478, 280438, 265929, 251261, 232726, 222067, 208694, 201923, 193136, 185016, 180983, 179582];
-    var y_m_almgym = [105912, 115347, 117980, 115601, 114672, 123305, 141398, 169273, 199437, 226077, 249323, 268524, 290027, 304615, 322290, 333858, 343310, 355361, 359549, 369869, 369511, 376628, 385550, 394423, 407549, 416279, 421747, 421881, 421574, 422824, 422361, 425797, 426633, 424423, 417088, 411814, 404786, 403104, 401837, 403542, 401083, 397828, 398013, 394252, 385572, 379202, 386729, 386277, 373809, 347923, 311685, 307065, 293280, 264756, 215814, 161681, 166525, 150304];
-    var y_m_erhgym = [102630, 124109, 136416, 137922, 142877, 156528, 184379, 220868, 254013, 281746, 300125, 317865, 334177, 349767, 365886, 374287, 383337, 393221, 409857, 420923, 432586, 434966, 439628, 439104, 445437, 455471, 463016, 465527, 468134, 466632, 465791, 465253, 460873, 457092, 444231, 437873, 429201, 434157, 423515, 417378, 405514, 411543, 419585, 410650, 401472, 375440, 355631, 339289, 320273, 289274, 270620, 253328, 232538, 211405, 195038, 247845, 240478, 259783];
-    var y_m_erhvfagl = [165540, 196531, 228458, 262341, 274874, 286243, 297035, 306129, 315114, 322583, 328885, 334319, 338609, 342924, 348354, 352401, 356877, 359306, 364026, 367598, 370596, 371741, 372678, 375103, 377164, 380314, 381850, 383950, 383467, 383359, 381204, 379863, 378139, 376469, 374698, 371514, 370019, 366615, 362850, 356936, 352629, 351378, 348612, 346988, 343580, 332313, 315138, 294504, 277093, 259905, 239929, 225638, 216196, 203185, 192035, 175139, 179687, 178391];
-    var y_m_kortvidereg = [142219, 142219, 148578, 159805, 180253, 211657, 251125, 290140, 318865, 340329, 354932, 366552, 375713, 386616, 396366, 405987, 415359, 425313, 431624, 437635, 441551, 445559, 446308, 445774, 449270, 449272, 449233, 445850, 442178, 442383, 442025, 442588, 438052, 434395, 432689, 430245, 426226, 422325, 417998, 415263, 412304, 409235, 405598, 391988, 374629, 351536, 334548, 309152, 279902, 254183, 237451, 222929, 210582, 193308, 200270, 195168, 211379, 209172];
-    var y_m_mellemvidereg = [109426, 109426, 169259, 243782, 317870, 326786, 325095, 328413, 340803, 353900, 364641, 374198, 382748, 390315, 399003, 405141, 413219, 420112, 430542, 438356, 448850, 457969, 470957, 480798, 485761, 490334, 497241, 503863, 508116, 510750, 510697, 510681, 502412, 498884, 488406, 483044, 474557, 469491, 461406, 455541, 448482, 446080, 442402, 437761, 433883, 426069, 414226, 381149, 348319, 314875, 285813, 252529, 219934, 206455, 198220, 196863, 202684, 202395];
-    var y_m_bachelor = [108771, 108771, 108771, 107217, 106910, 108624, 118297, 132412, 152905, 172558, 208726, 249304, 295054, 326527, 355418, 370485, 388038, 398665, 420529, 437193, 452587, 463860, 466482, 472336, 472966, 474763, 480844, 494504, 505561, 501209, 497967, 508749, 515453, 507672, 502329, 486997, 486906, 469668, 458635, 448388, 447791, 450692, 443752, 441682, 435914, 428313, 388893, 364988, 337231, 335765, 336962, 313993, 314014, 320285, 314189, 256835, 214987, 191069];
-    var y_m_langvidereg = [393790, 393790, 393790, 393790, 371740, 351330, 339288, 351366, 366919, 378866, 394442, 412229, 431674, 451805, 471742, 486778, 500620, 513185, 527492, 545223, 558037, 575501, 585403, 600448, 609220, 619704, 622835, 627614, 630265, 636162, 633770, 632723, 634142, 641050, 641325, 640612, 632315, 626192, 615262, 608498, 600933, 593272, 581931, 570869, 557225, 545354, 532731, 521024, 500747, 464731, 417328, 362906, 315151, 278332, 255630, 246557, 253266, 233772];
-    var y_k_skole = [94195, 116446, 135722, 148650, 153524, 160052, 173393, 188942, 202022, 210641, 215936, 221011, 225096, 228500, 232177, 236288, 242377, 247221, 251240, 253714, 257700, 260950, 265624, 266832, 268157, 268829, 270740, 272836, 274021, 275510, 277645, 280348, 282345, 283573, 284668, 285278, 286377, 286867, 287689, 286056, 278594, 276101, 271447, 273984, 270998, 257639, 247754, 233471, 229078, 212030, 201573, 188229, 178412, 164244, 159165, 155743, 157286, 163009];
-    var y_k_almgym = [117931, 117624, 112767, 106251, 103667, 110625, 124701, 141513, 160154, 182241, 204410, 222907, 235671, 245516, 254060, 260390, 267313, 270383, 277451, 281947, 291602, 297351, 305665, 311652, 317420, 325897, 332693, 338123, 335580, 337963, 337699, 339507, 338355, 341953, 339293, 341345, 338293, 340744, 340310, 339546, 341921, 345209, 347666, 347418, 339406, 322422, 316365, 297830, 294300, 275105, 250884, 203604, 166880, 203638, 263246, 241080, 242739, 217304];
-    var y_k_erhgym = [145970, 140546, 131902, 124724, 122853, 133190, 150296, 175528, 199347, 221116, 237403, 249590, 258796, 266602, 275384, 285354, 300454, 312189, 321485, 321657, 324357, 329889, 334556, 338453, 342769, 346970, 351110, 354303, 355672, 354576, 352688, 354011, 353850, 353033, 351717, 355429, 359333, 363513, 363037, 345145, 334019, 328232, 350995, 367038, 362641, 344259, 326883, 303508, 272940, 241753, 244364, 227062, 250888, 236595, 208218, 192637, 145582, 273744];
-    var y_k_erhvfagl = [144017, 167649, 190459, 209286, 223677, 232342, 238621, 243851, 248166, 252781, 256042, 260760, 264335, 269333, 273072, 276881, 279842, 282690, 284884, 287397, 290294, 293296, 296830, 299862, 303628, 307276, 311065, 313765, 315378, 315766, 315988, 316071, 316439, 316332, 315317, 314520, 314461, 314001, 312508, 310090, 306840, 308170, 306023, 307173, 304400, 293160, 280961, 263575, 250348, 235942, 220876, 211182, 202339, 193952, 181812, 175973, 166424, 172460];
-    var y_k_kortvidereg = [144469, 144469, 143601, 150861, 170218, 200132, 230680, 254938, 275021, 288460, 296906, 302413, 308450, 315064, 320873, 325574, 330300, 335342, 339223, 343521, 346309, 349950, 351323, 352396, 354931, 355634, 359590, 360112, 362467, 364245, 366293, 366420, 361641, 357357, 354781, 352830, 350755, 348574, 345453, 340154, 334807, 332399, 331716, 327732, 325426, 310845, 300167, 282172, 262396, 240776, 219237, 208275, 215012, 185912, 206795, 195660, 421444, 401819];
-    var y_k_mellemvidereg = [277208, 277208, 277208, 288670, 291730, 296903, 291148, 295450, 297811, 299900, 302106, 305495, 309837, 313443, 318376, 322939, 328942, 333960, 338893, 343692, 348801, 354468, 358331, 360872, 362896, 365119, 367782, 370577, 373784, 375809, 376587, 376182, 376393, 377494, 378588, 379836, 381362, 383021, 383555, 382318, 378127, 377716, 373390, 371229, 366905, 349907, 328167, 298009, 279841, 251821, 225577, 205235, 186623, 175789, 161078, 160956, 152122, 151481];
-    var y_k_bachelor = [106397, 106397, 103671, 100985, 99162, 102226, 107591, 118620, 133509, 157363, 187859, 218786, 252777, 278036, 298885, 309786, 317270, 326560, 336566, 347609, 356741, 356643, 355154, 351642, 354220, 356444, 362003, 366937, 372358, 370658, 369407, 363510, 356522, 352882, 353712, 352036, 346265, 346293, 341467, 341850, 337819, 338790, 331081, 314850, 320013, 313033, 309560, 272763, 263850, 240229, 238503, 223832, 206676, 235745, 159985, 104427, 102144, 132521];
-    var y_k_langvidereg = [320830, 320830, 320830, 316862, 311135, 310342, 315703, 327218, 336021, 346313, 354248, 365393, 377124, 389483, 398191, 407195, 416630, 426772, 435309, 442352, 451292, 460677, 471148, 478805, 485585, 492192, 500437, 505756, 509582, 511387, 511318, 510816, 511249, 517175, 520705, 522250, 517264, 512434, 508174, 508539, 507987, 503702, 492457, 481010, 477287, 462249, 449410, 433725, 410849, 395541, 351868, 315392, 272201, 241052, 216900, 205455, 192150, 195100];
-
-    //NB: samme logik findes andetsteds
-    var y = null;
-    var alderUddSlut = Number.NaN;
-    var pensionsBidrag = Number.NaN;
-    if (koen == 0) {
-            //mand
-            if (hf == 0) //skole
-            {
-              alderUddSlut = 18;
-              y = y_m_skole;
-              pensionsBidrag = 0.09;
-            } else if (hf == 1) //almengym
-            {
-              alderUddSlut = 19;
-              y = y_m_almgym;
-              pensionsBidrag = 0.09;
-            } else if (hf == 2) //erh gym
-            {
-              alderUddSlut = 19;
-              y = y_m_erhgym;
-              pensionsBidrag = 0.09;
-            } else if (hf == 3) //erhvfagl
-            {
-              alderUddSlut = 20;
-              y = y_m_erhvfagl;
-              pensionsBidrag = 0.12;
-            } else if (hf == 4) //kort vg
-            {
-              alderUddSlut = 22;
-              y = y_m_kortvidereg;
-              pensionsBidrag = 0.15;
-            } else if (hf == 5) //mellem vg
-            {
-              alderUddSlut = 23;
-              y = y_m_mellemvidereg;
-              pensionsBidrag = 0.15;
-            } else if (hf == 6) //bachelor
-            {
-              alderUddSlut = 23;
-              y = y_m_bachelor;
-              pensionsBidrag = 0.15;
-            } else if (hf == 7) //lang vg
-            {
-              alderUddSlut = 26;
-              y = y_m_langvidereg;
-              pensionsBidrag = 0.15;
-            }
-          } else {
-            //kvinde
-            if (hf == 0) //skole
-            {
-              alderUddSlut = 18;
-              y = y_k_skole;
-              pensionsBidrag = 0.09;
-            } else if (hf == 1) //almengym
-            {
-              alderUddSlut = 19;
-              y = y_k_almgym;
-              pensionsBidrag = 0.09;
-            } else if (hf == 2) //erh gym
-            {
-              alderUddSlut = 19;
-              y = y_k_erhgym;
-              pensionsBidrag = 0.09;
-            } else if (hf == 3) //erhvfagl
-            {
-              alderUddSlut = 20;
-              y = y_k_erhvfagl;
-              pensionsBidrag = 0.12;
-            } else if (hf == 4) //kort vg
-            {
-              alderUddSlut = 22;
-              y = y_k_kortvidereg;
-              pensionsBidrag = 0.15;
-            } else if (hf == 5) //mellem vg
-            {
-              alderUddSlut = 23;
-              y = y_k_mellemvidereg;
-              pensionsBidrag = 0.15;
-            } else if (hf == 6) //bachelor
-            {
-              alderUddSlut = 23;
-              y = y_k_bachelor;
-              pensionsBidrag = 0.15;
-            } else if (hf == 7) //lang vg
-            {
-              alderUddSlut = 26;
-              y = y_k_langvidereg;
-              pensionsBidrag = 0.15;
-            }
-      }
-
-  if((alder < 18 && radio != 0) || (alder > pensionsAlder && radio != 2)) {
-    indkomst50 = -55555;
-  }
-  else {
-
-    var indkomst50 = Number.NaN;
-
-    if(radio == 0) {
-      indkomst50 = y[alderUddSlut + 2 - 18] * (1+pensionsBidrag);
-    }
-    else if(radio == 1) {
-      indkomst50 = y[alder - 18] * (1+pensionsBidrag);
-    }
-    else {
-      indkomst50 = y[50 - 18] * (1+pensionsBidrag);
-    }
-  }
-
-  return indkomst50;
 }
 
 function ToFixed(num, fixed) {
@@ -235,9 +103,8 @@ function IsDigits(val) {
   return isnum;
 }
 
-function IndkomstText(y) {
-  if(y == -55555) return "<p>Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</p>";
-  else return "<p>Indkomsten skal angives i dagens kroner. (Ud fra de øvrige informationer, du har givet, vil du gennemsnitligt tjene: " + FormatNumber(y) + " kr)</p>";
+function IndkomstText() {
+  return "<p>Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</p>";  
 }
 
 function PensionsText(alder) {
@@ -268,22 +135,7 @@ function Radio(radio) {
 
 function Parametre2(frm) {
   var alder = document.getElementById("alder").selectedIndex;
-
-  /*
-  var koen = document.getElementById("select1").selectedIndex;
-  var hf = document.getElementById("select2").selectedIndex;
-  var radio = 0;
-  if (document.getElementById("radio0").checked) radio = 0;
-  else if (document.getElementById("radio1").checked) radio = 1;
-  else if (document.getElementById("radio2").checked) radio = 2;
-  var y = Number.NaN;
-  y = GetIndkomst50(koen, hf, alder, radio);
-  var y2 = Math.round(y / 12 / 1000) * 1000;
-  if(y == -55555) y2 = -55555;
-  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(y2);
-  */
-
-  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText(-55555);
+  document.getElementById("estimat_indkomst50").innerHTML = IndkomstText();
   document.getElementById("pensionsAlder2").innerHTML = PensionsText(alder);
   return y;
 }
@@ -593,6 +445,13 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   if (indkomst50 == -55555)  fejltext += "<p class=\"dbs-error\">Indkomsten skal angives som et heltal (uden komma eller punktum), f.eks. 31000.</p>";
   else if (indkomst50 <= 0) fejltext += "<p class=\"dbs-error\">Forventet indkomst skal være større end 0.</p>";
 
+  if (fejltext != "") {   
+        document.getElementById("p1").innerHTML = fejltext;
+        document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";        
+	document.getElementById("result").style.display = "block";
+        return nettobidrag;
+  }
+
   // -----------------------------------------------------------
   // Checks slut
   // -----------------------------------------------------------
@@ -701,14 +560,8 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("graf").innerHTML = "";
     document.getElementById("labels").innerHTML = "";
     document.getElementById("p2").innerHTML = "";
-
-    if (fejltext != "") {
-      document.getElementById("p1").innerHTML = fejltext;
-      document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";
-      return;
-    } else {
-      document.getElementById("result").style.backgroundColor = "rgba(255,255,255,0.8)";
-    }
+    
+    document.getElementById("result").style.backgroundColor = "rgba(255,255,255,0.8)";    
 
     var u = "";
     var s = "";
@@ -751,10 +604,13 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     //bemærk: denne kr variabel en en streng, og det er den absolutte værdi. Variablen mio indeholder fortegnet.
     var kr = FormatNumber(100 * Math.round(Math.abs(nettobidragKumuleret[maxLevealder] / maxLevealder / 100)));
 
+    var mio_comma = mio.toString().replace('.',',');
+    var minusmio_comma = (-mio).toString().replace('.',',');
+
     if (mio >= 0) {
-      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-up.png\" alt=\"Thumbs-up ikon\"><p class=\"dbs-result-header\">Vi forventer, at du giver samfundet et overskud på " + mio + " mio. kr</p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-up.png\" alt=\"Thumbs-up ikon\"><p class=\"dbs-result-header\">Vi forventer, at du giver samfundet et overskud på " + mio_comma + " mio. kr</p>";
     } else {
-      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\"><p class=\"dbs-result-header\">Vi forventer, at du kommer til at koste samfundet " + (-mio) + " mio. kr</p>";
+      document.getElementById("p1").innerHTML += "<img src=\"/upload/3rd-party/de-bredeste-skuldre/images/thumbs-down.png\" alt=\"Thumbs-up ikon\"><p class=\"dbs-result-header\">Vi forventer, at du kommer til at koste samfundet " + minusmio_comma + " mio. kr</p>";
     }
 
     if (mio >= 0) {
@@ -765,32 +621,36 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Del testen på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Del testen på Facebook</a></div>";
 
-    var overskudText = "";
+    var overskudText = "";    
+    
     if (mio > 0 || break_even > 0) { //overskud eller midlertidigt overskud
       if (alder < break_even) {
         overskudText += "Du bliver økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       } else {
         overskudText += "Du blev økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
-      }
-      overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Men du kan stadig nå at gå i minus. Når man bliver ældre, går på pension og får større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet, kan man blive en samlet underskudsforretning for staten. ";
+      }      
       if (mio > 0) { //samlet overskud
-        overskudText += "Det sker dog ikke for dig givet de indtastede oplysninger.";
+        overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Som ældre vil en del personer gå i minus. Når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
+        overskudText += "Ud fra de indtastede oplysninger er forventningen dog, at du forbliver en samlet overskudsforretning for de offentlige kasser over hele livet.";
       } else { //samlet underskud, angiv hvornår man gør i underskud
+        overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Men du kan stadig nå at gå i minus. Når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
         if (alder < break_even2) {
-          overskudText += "Det sker for dig, når du bliver <b>" + break_even2 + " år</b> gammel.";
+          overskudText += "Ud fra de indtastede oplysninger sker det for dig, når du bliver <b>" + break_even2 + " år</b> gammel.";
         } else {
-          overskudText += "Det skete for dig, da du blev <b>" + break_even2 + " år</b> gammel.";
+          overskudText += "Ud fra de indtastede oplysninger skete det for dig, da du blev <b>" + break_even2 + " år</b> gammel.";
         }
       }
     } else { //har været i (akkumuleret) rød hele vejen
-      overskudText += "Du kommer heller ikke til at være en samlet overskudsforretning undervejs. Det skyldes, at når man bliver ældre, går man typisk på pension og samtidigt er der større risiko for at komme på hospitalet. Derfor stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.";
+      overskudText += "Du kommer heller ikke til at være en samlet overskudsforretning undervejs. Det skyldes, at når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af af alvorlig sygdom og komme på hospitalet. Derfor stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.";
     }
     document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">" + overskudText + "</p>";
 
     var pensionsTid = maxLevealder - pensionsAlder;
+    
+    var ledig_syg_ialt_comma = ToFixed(ledig_syg_ialt, 1).toString().replace('.',',');    
 
     var text2 = "<p>Med de oplysninger, du har angivet, kan du statistisk set forvente at blive <b>" + maxLevealder + " år</b> gammel. Inden da vil en gennemsnitlig dansker som dig ";
-    text2 += "fra 18-års alderen have brugt <b>" + ToFixed(alderUddSlut - 18, 0) + "</b> år på (færdiggjort) uddannelse og have været ledig, syg eller på (barsels)orlov i <b>" + ToFixed(ledig_syg_ialt, 1) + " år.</b> ";
+    text2 += "fra 18-års alderen have brugt <b>" + ToFixed(alderUddSlut - 18, 0) + "</b> år på (færdiggjort) uddannelse og have været ledig, syg eller på (barsels)orlov i <b>" + ledig_syg_ialt_comma + " år.</b> ";
     text2 += "Du forventes at være pensionist i <b>"+ pensionsTid + " år</b>.";
     text2 += "</p>";
     document.getElementById("p1").innerHTML += text2;
@@ -804,7 +664,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("p2").innerHTML += "<b>Bagom udregningen:</b>";
 
     var text4 = "<p class=\"dbs-small\">Beregningerne er behæftet med usikkerhed, og beregningene giver udelukkende et approksimativt overslag over personens træk på de offentlige kasser og siger eksempelvis ikke noget om, hvorvidt personen bidrager til samfundet på andre måder end det rent økonomiske mellemværende med staten.  Resultatet er baseret på gennemsnitsoplysninger om træk på offentligt forbrug og indkomstoverførsler ud fra de få oplysninger, du har angivet. Så du kan både være en bedre og dårligere forretning for de offentlige kasser, end resultatet viser. Du kan f.eks. have været i gang med flere uddannelser eller fået dyr behandling for alvorlig sygdom end en gennemsnitsperson med samme køn, alder og uddannelse. ";
-    text4 += "Beregningerne siger ligeledes ikke noget om, hvor meget en person med lignende uddannelsesniveau mv. bidrager til de offentlige finanser, hvis personen indvandrer til Danmark. Derudover er beregningerne foretaget under antagelse af, at man gennemlever hele sit liv med den nuværende indretning af skatte-, overfårselssystem m.v.</p>";
+    text4 += "Beregningerne siger ligeledes ikke noget om, hvor meget en person med lignende uddannelsesniveau mv. bidrager til de offentlige finanser, hvis personen indvandrer til Danmark. Derudover er beregningerne foretaget under antagelse af, at man gennemlever hele sit liv med den nuværende indretning af skatte- og overførselssystem m.v.</p>";
     text4 += "<p class=\"dbs-small\">Beregningen er udført ud fra baggrundsdata mv. venligst stillet til rådighed af <a href=\"http://www.da.dk\" target=\"_blank\">DA</a> og <a href=\"http://www.dreammodel.dk\" target=\"_blank\">DREAM</a> og sammenstillet af konsulent Thomas Thomsen. Du kan læse mere om beregningsmetoder og -forudsætninger <a href=\"http://www.b.dk/nationalt/beregningsmetoder-og-forudsaetninger\" target=\"_blank\">her</a>.</p>";
     document.getElementById("p2").innerHTML += text4;
 
