@@ -84,7 +84,7 @@ function Parametre(frm) {
   var hf = document.getElementById("select2").selectedIndex;
   var pensionsAlder = 60 + document.getElementById("pensionsAlder").selectedIndex;
   var indkomst50 = Number.NaN;
-  if(!IsDigits(frm.indkomst50.value)) {
+  if(!IsDigits(frm.indkomst50.value.trim())) {
     indkomst50 = -55555;
   }
   else {
@@ -446,7 +446,10 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   else if (indkomst50 <= 0) fejltext += "<p class=\"dbs-error\">Forventet indkomst skal være større end 0.</p>";
 
   if (fejltext != "") {   
-        document.getElementById("p1").innerHTML = fejltext;
+        document.getElementById("p1").innerHTML = fejltext;                
+	document.getElementById("graf").innerHTML = "";
+	document.getElementById("labels").innerHTML = "";
+        document.getElementById("p2").innerHTML = "";        
         document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";        
 	document.getElementById("result").style.display = "block";
         return nettobidrag;
