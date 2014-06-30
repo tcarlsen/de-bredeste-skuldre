@@ -9,7 +9,7 @@
   <div class="dbs-container">
     <h1 id="dbs-header" class="dbs-header">Er du økonomisk bæredygtig?</h1>
     <p id="dbs-desc" class="dbs-desc">Svar på nogle få spørgsmål og find ud af, om du koster de offentlige kasser mere, end du bidrager med. Bemærk at resultatet er beregnet ud fra et gennemsnit for danskere med samme køn, alder, uddannelse, indkomst og tilknytning til arbejdsmarkedet.</p>
-    <form id="form">
+    <form id="form" onsubmit="event.preventDefault();">
       <div class="dbs-form-item">
         <label for="select1">Hvad er dit køn?</label>
         <select id="select1" onchange="Parametre2(this.form)">
