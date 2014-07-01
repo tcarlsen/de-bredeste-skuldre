@@ -630,23 +630,23 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     
     if (mio > 0 || break_even > 0) { //overskud eller midlertidigt overskud
       if (alder < break_even) {
-        overskudText += "Du bliver økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
+        overskudText += "Ifølge beregningerne bliver du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       } else {
-        overskudText += "Du blev økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
+        overskudText += "Ifølge beregningene blev du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       }      
       if (mio > 0) { //samlet overskud
-        overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Som ældre vil en del personer gå i minus. Når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
+        overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
         overskudText += "Ud fra de indtastede oplysninger er forventningen dog, at du forbliver en samlet overskudsforretning for de offentlige kasser over hele livet.";
       } else { //samlet underskud, angiv hvornår man gør i underskud
-        overskudText += "Fra det tidspunkt har du betalt mere til de offentlige kasser, end du har kostet. Men du kan stadig nå at gå i minus. Når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af alvorlig sygdom og komme på hospitalet. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
+        overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
         if (alder < break_even2) {
-          overskudText += "Ud fra de indtastede oplysninger sker det for dig, når du bliver <b>" + break_even2 + " år</b> gammel.";
+          overskudText += "Ud fra de indtastede oplysninger er forventningen, at du bliver en underskudsforretning fra <b>" + break_even2 + "-årsalderen</b>.";
         } else {
-          overskudText += "Ud fra de indtastede oplysninger skete det for dig, da du blev <b>" + break_even2 + " år</b> gammel.";
+          overskudText += "Ud fra de indtastede oplysninger er forventningen, at du blev en underskudsforretning fra <b>" + break_even2 + "-årsalderen</b>.";
         }
       }
     } else { //har været i (akkumuleret) rød hele vejen
-      overskudText += "Du kommer heller ikke til at være en samlet overskudsforretning undervejs. Det skyldes, at når man bliver ældre, går man typisk på pension, og samtidigt er der udgifter til ældrepleje og større risiko for at blive ramt af af alvorlig sygdom og komme på hospitalet. Derfor stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.";
+      overskudText += "Ifølge beregningerne er der ikke udsigt til, at du i løbet af livet bliver en samlet overskudsforretning for de offentlige kasser. Det skyldes, at når man bliver ældre, vil man begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Derfor stiger samfundets udgifter, samtidigt med, at man betaler mindre til fælleskassen.";
     }
     document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">" + overskudText + "</p>";
 
