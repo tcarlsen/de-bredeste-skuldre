@@ -1,5 +1,6 @@
 .dbs-container {
   background-image: url(/upload/3rd-party/de-bredeste-skuldre/images/cover-5.jpg);
+  background-size: cover;
   padding-bottom: 20px;
 }
 
