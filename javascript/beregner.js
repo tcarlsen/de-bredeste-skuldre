@@ -14,6 +14,8 @@ function VisInputForm(num, fixed) {
   document.getElementById("dbs-desc").style.display = "block";
   document.getElementById("udfold").style.display = "none";
   document.getElementById("result").style.display = "none";
+
+  location.hash = "#dbs-top";
 }
 
 function Beregner_init() {
@@ -683,6 +685,8 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   document.getElementById("dbs-desc").style.display = "none";
   document.getElementById("udfold").style.display = "block";
   document.getElementById("result").style.display = "block";
+
+  location.hash = "#dbs-top";
 
   return nettobidrag;
 }
