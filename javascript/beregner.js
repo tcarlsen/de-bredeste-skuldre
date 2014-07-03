@@ -632,7 +632,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       if (alder < break_even) {
         overskudText += "Ifølge beregningerne bliver du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       } else {
-        overskudText += "Ifølge beregningene blev du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
+        overskudText += "Ifølge beregningerne blev du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       }      
       if (mio > 0) { //samlet overskud
         overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
@@ -668,7 +668,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     document.getElementById("p2").innerHTML += "<b>Bagom udregningen:</b>";
 
-    var text4 = "<p class=\"dbs-small\">Beregningerne er behæftet med usikkerhed, og beregningene giver udelukkende et approksimativt overslag over personens træk på de offentlige kasser og siger eksempelvis ikke noget om, hvorvidt personen bidrager til samfundet på andre måder end det rent økonomiske mellemværende med staten.  Resultatet er baseret på gennemsnitsoplysninger om træk på offentligt forbrug og indkomstoverførsler ud fra de få oplysninger, du har angivet. Så du kan både være en bedre og dårligere forretning for de offentlige kasser, end resultatet viser. Du kan f.eks. have været i gang med flere uddannelser eller fået dyr behandling for alvorlig sygdom end en gennemsnitsperson med samme køn, alder og uddannelse. ";
+    var text4 = "<p class=\"dbs-small\">Beregningerne er behæftet med usikkerhed, og beregningerne giver udelukkende et approksimativt overslag over personens træk på de offentlige kasser og siger eksempelvis ikke noget om, hvorvidt personen bidrager til samfundet på andre måder end det rent økonomiske mellemværende med staten.  Resultatet er baseret på gennemsnitsoplysninger om træk på offentligt forbrug og indkomstoverførsler ud fra de få oplysninger, du har angivet. Så du kan både være en bedre og dårligere forretning for de offentlige kasser, end resultatet viser. Du kan f.eks. have været i gang med flere uddannelser eller fået dyr behandling for alvorlig sygdom end en gennemsnitsperson med samme køn, alder og uddannelse. ";
     text4 += "Beregningerne siger ligeledes ikke noget om, hvor meget en person med lignende uddannelsesniveau mv. bidrager til de offentlige finanser, hvis personen indvandrer til Danmark. Derudover er beregningerne foretaget under antagelse af, at man gennemlever hele sit liv med den nuværende indretning af skatte- og overførselssystem m.v.</p>";
     text4 += "<p class=\"dbs-small\">Beregningen er udført ud fra baggrundsdata mv. venligst stillet til rådighed af <a href=\"http://www.da.dk\" target=\"_blank\">DA</a> og <a href=\"http://www.dreammodel.dk\" target=\"_blank\">DREAM</a> og sammenstillet af konsulent Thomas Thomsen. Du kan læse mere om beregningsmetoder og -forudsætninger <a href=\"http://www.b.dk/nationalt/beregningsmetoder-og-forudsaetninger\" target=\"_blank\">her</a>.</p>";
     document.getElementById("p2").innerHTML += text4;
