@@ -229,6 +229,7 @@
 @media (max-width: 980px) {
   .dbs-header {
     font-size: 66px !important;
+    line-height: 65px;
   }
 
   .dbs-desc {
@@ -244,6 +245,8 @@
   .dbs-form-item select {
     font-size: 32px;
     -webkit-appearance: menulist-button;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .dbs-form-item input[type="number"] {
@@ -257,5 +260,64 @@
 
   dbs-em p {
     font-size: 21px !important;
+  }
+}
+
+@media (max-width: 585px) {
+  .dbs-header {
+    font-size: 40px !important;
+    line-height: 45px;
+  }
+
+  .dbs-desc {
+    font-size: 28px !important;
+    line-height: 32px !important;
+  }
+}
+/* m.b.dk runs 320px */
+@media (max-width: 375px) {
+  .dbs-header {
+    font-size: 33px !important;
+    line-height: 36px;
+  }
+
+  .dbs-desc {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+
+  .dbs-form-item label {
+    font-size: 20px !important;
+  }
+
+  .dbs-form-item select {
+    font-size: 20px;
+  }
+
+  .dbs-form-item input[type="number"] {
+    font-size: 20px;
+  }
+
+  #p1 img {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .dbs-result-header {
+    font-size: 33px !important;
+    line-height: 37px !important;
+  }
+
+  .dbs-higlight {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+
+  .dbs-higlight b {
+    font-size: 24px !important;
+  }
+
+  .dbs-submit {
+    font-size: 30px !important;
   }
 }
