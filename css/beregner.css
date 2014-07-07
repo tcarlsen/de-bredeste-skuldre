@@ -109,6 +109,14 @@
   font-size: 20px;
 }
 
+#graf {
+  height: 100px;
+}
+
+#labels {
+  height: 30px;
+}
+
 .float-wrap {
   width: 100%;
 }
