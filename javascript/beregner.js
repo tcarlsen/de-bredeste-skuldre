@@ -624,7 +624,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
       document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">Det svarer til et underskud på <b>" + kr + " kr.</b> pr. leveår.</p>"
     }
 
-    document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Del testen på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Del testen på Facebook</a></div>";
+    document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Anbefal testen på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Anbefal testen på Facebook</a></div>";
 
     var overskudText = "";    
     
