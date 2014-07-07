@@ -106,7 +106,7 @@ function IsDigits(val) {
 }
 
 function IndkomstText() {
-  return "<p>Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</p>";  
+  return "<p>Indkomsten skal angives i dagens kroner, dvs. svarende til 2014-prisniveau.</p>";
 }
 
 function PensionsText(alder) {
@@ -447,12 +447,12 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   if (indkomst50 == -55555)  fejltext += "<p class=\"dbs-error\">Indkomsten skal angives som et heltal (uden komma eller punktum), f.eks. 31000.</p>";
   else if (indkomst50 <= 0) fejltext += "<p class=\"dbs-error\">Forventet indkomst skal være større end 0.</p>";
 
-  if (fejltext != "") {   
-        document.getElementById("p1").innerHTML = fejltext;                
+  if (fejltext != "") {
+        document.getElementById("p1").innerHTML = fejltext;
 	document.getElementById("graf").innerHTML = "";
 	document.getElementById("labels").innerHTML = "";
-        document.getElementById("p2").innerHTML = "";        
-        document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";        
+        document.getElementById("p2").innerHTML = "";
+        document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";
 	document.getElementById("result").style.display = "block";
         return nettobidrag;
   }
@@ -565,8 +565,8 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("graf").innerHTML = "";
     document.getElementById("labels").innerHTML = "";
     document.getElementById("p2").innerHTML = "";
-    
-    document.getElementById("result").style.backgroundColor = "rgba(255,255,255,0.8)";    
+
+    document.getElementById("result").style.backgroundColor = "rgba(255,255,255,0.8)";
 
     var u = "";
     var s = "";
@@ -626,14 +626,14 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 
     document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Anbefal testen på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Anbefal testen på Facebook</a></div>";
 
-    var overskudText = "";    
-    
+    var overskudText = "";
+
     if (mio > 0 || break_even > 0) { //overskud eller midlertidigt overskud
       if (alder < break_even) {
         overskudText += "Ifølge beregningerne bliver du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       } else {
         overskudText += "Ifølge beregningerne blev du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
-      }      
+      }
       if (mio > 0) { //samlet overskud
         overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
         overskudText += "Ud fra de indtastede oplysninger er forventningen dog, at du forbliver en samlet overskudsforretning for de offentlige kasser over hele livet.";
@@ -651,8 +651,8 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">" + overskudText + "</p>";
 
     var pensionsTid = maxLevealder - pensionsAlder;
-    
-    var ledig_syg_ialt_comma = ToFixed(ledig_syg_ialt, 1).toString().replace('.',',');    
+
+    var ledig_syg_ialt_comma = ToFixed(ledig_syg_ialt, 1).toString().replace('.',',');
 
     var text2 = "<p>Med de oplysninger, du har angivet, kan du statistisk set forvente at blive <b>" + maxLevealder + " år</b> gammel. Inden da vil en gennemsnitlig dansker som dig ";
     text2 += "fra 18-års alderen have brugt <b>" + ToFixed(alderUddSlut - 18, 0) + "</b> år på (færdiggjort) uddannelse og have været ledig, syg eller på (barsels)orlov i <b>" + ledig_syg_ialt_comma + " år.</b> ";
