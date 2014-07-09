@@ -54,11 +54,12 @@
   background-color: rgba(255,255,255,0.8);
   border: none;
   border-radius: 6px;
-  margin: 10px 20px;
+  margin: 20px 20px 35px 20px;
   cursor: pointer;
 }
 
 .dbs-result {
+  display: none;
   padding: 9px 20px;
 }
 
@@ -108,9 +109,15 @@
   width: 150px;
 }
 
-#p1 b, #p2 b {
+#p1 b, #p2 b, #p3 b {
   font-family: b-sans-eb;
   font-size: 20px;
+}
+
+#p3 {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  padding: 9px 20px;
 }
 
 #graf {

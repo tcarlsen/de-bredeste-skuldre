@@ -14,6 +14,7 @@ function VisInputForm(num, fixed) {
   document.getElementById("dbs-desc").style.display = "block";
   document.getElementById("udfold").style.display = "none";
   document.getElementById("result").style.display = "none";
+  document.getElementById("p3").style.display = "none";
 
   location.hash = "#dbs-top";
 }
@@ -452,6 +453,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
 	document.getElementById("graf").innerHTML = "";
 	document.getElementById("labels").innerHTML = "";
         document.getElementById("p2").innerHTML = "";
+        document.getElementById("p3").innerHTML = "";
         document.getElementById("result").style.backgroundColor = "rgba(184, 8, 8, 0.8)";
 	document.getElementById("result").style.display = "block";
         return nettobidrag;
@@ -619,9 +621,9 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     }
 
     if (mio >= 0) {
-      document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">Det svarer til et overskud på <b>" + kr + " kr.</b> pr. leveår.</p>"
+      document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">Det svarer til et overskud på <b>" + kr + " kr.</b> om året fra vugge til grav.</p>"
     } else {
-      document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">Det svarer til et underskud på <b>" + kr + " kr.</b> pr. leveår.</p>"
+      document.getElementById("p1").innerHTML += "<p class=\"dbs-higlight\">Det svarer til et underskud på <b>" + kr + " kr.</b> om året fra vugge til grav.</p>"
     }
 
     document.getElementById("p1").innerHTML += "<div class=\"dbs-facebook\"><a href=\"javascript:void(0);\" title=\"Anbefal testen på Facebook\" onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');\" style=\"color:#fff\">Anbefal testen på Facebook</a></div>";
@@ -635,10 +637,10 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
         overskudText += "Ifølge beregningerne blev du økonomisk bæredygtig som <b>" + break_even + "-årig</b>. "
       }
       if (mio > 0) { //samlet overskud
-        overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
-        overskudText += "Ud fra de indtastede oplysninger er forventningen dog, at du forbliver en samlet overskudsforretning for de offentlige kasser over hele livet.";
+        overskudText += "»Økonomisk bæredygtig« betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
+        overskudText += "Det sker dog ikke for dig.";
       } else { //samlet underskud, angiv hvornår man gør i underskud
-        overskudText += "\"Økonomisk bæredygtig\" betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
+        overskudText += "»Økonomisk bæredygtig« betyder, at du har betalt mere til de offentlige kasser, end du har kostet i samme periode. Når man bliver ældre, vil man imidlertid begynde at trække mere på de offentlige kasser, f.eks. på grund af folkepension, ældrepleje og sygdom. Så man kan sagtens nå at blive en samlet underskudsforretning for staten. ";
         if (alder < break_even2) {
           overskudText += "Ud fra de indtastede oplysninger er forventningen, at du bliver en underskudsforretning fra <b>" + break_even2 + "-årsalderen</b>.";
         } else {
@@ -666,14 +668,15 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
     text3 += "de offentlige kasser. Gul betyder, at du går ca. i nul. Grøn betyder, at du betaler mere, end du koster.<p>";
     document.getElementById("p2").innerHTML = text3;
 
-    document.getElementById("p2").innerHTML += "<b>Bagom udregningen:</b>";
-
-    var text4 = "<p class=\"dbs-small\">Beregningerne er behæftet med usikkerhed, og beregningerne giver udelukkende et approksimativt overslag over personens træk på de offentlige kasser og siger eksempelvis ikke noget om, hvorvidt personen bidrager til samfundet på andre måder end det rent økonomiske mellemværende med staten.  Resultatet er baseret på gennemsnitsoplysninger om træk på offentligt forbrug og indkomstoverførsler ud fra de få oplysninger, du har angivet. Så du kan både være en bedre og dårligere forretning for de offentlige kasser, end resultatet viser. Du kan f.eks. have været i gang med flere uddannelser eller fået dyr behandling for alvorlig sygdom end en gennemsnitsperson med samme køn, alder og uddannelse. ";
-    text4 += "Beregningerne siger ligeledes ikke noget om, hvor meget en person med lignende uddannelsesniveau mv. bidrager til de offentlige finanser, hvis personen indvandrer til Danmark. Derudover er beregningerne foretaget under antagelse af, at man gennemlever hele sit liv med den nuværende indretning af skatte- og overførselssystem m.v.</p>";
-    text4 += "<p class=\"dbs-small\">Beregningen er udført ud fra baggrundsdata mv. venligst stillet til rådighed af <a href=\"http://www.da.dk\" target=\"_blank\">DA</a> og <a href=\"http://www.dreammodel.dk\" target=\"_blank\">DREAM</a> og sammenstillet af konsulent Thomas Thomsen. Du kan læse mere om beregningsmetoder og -forudsætninger <a href=\"http://www.b.dk/nationalt/beregningsmetoder-og-forudsaetninger\" target=\"_blank\">her</a>.</p>";
-    document.getElementById("p2").innerHTML += text4;
-
-
+    var text4 = "<b>Bag om udregningen:</b>";
+    text4+= "<p class=\"dbs-small\">Resultatet viser, hvor meget en gennemsnitsdansker med de oplysninger, du har angivet, koster de offentlige kasser i forhold til, hvor meget vedkommende betaler.";
+    text4+= "<p class=\"dbs-small\">Beregningen bygger på data stillet venligst til rådighed fra <a href=\"http://www.da.dk\" target=\"_blank\">DA</a> og fra <a href=\"http://www.dreammodel.dk\" target=\"_blank\">DREAMs</a> generationsregnskab, der eksempelvis bruges af Finansministeriet, Nationalbanken og universitetsforskere til økonomiske forudsigelser og konsekvensberegninger.</p>";
+    text4+= "<p class=\"dbs-small\">Generationsregnskabet opdeler det offentliges indtægter og udgifter efter køn og alder i forhold til skatter, afgifter, overførselsindkomster, sundheds- og undervisningsudgifter, infrastruktur osv.</p>";
+    text4+= "<p class=\"dbs-small\">I beregneren erstatter vi nogle af de vigtigste værdier fra DA og DREAM med de oplysninger, som brugeren har angivet, for at regne ud, hvad den enkelte bruger koster og bidrager med til statskassen. Alle de angivne oplysninger regnes med og har indflydelse udregningen. Du kan læse hvordan i <a href=\"http://www.b.dk/nationalt/beregningsmetoder-og-forudsaetninger\">den detaljerede beskrivelse af beregningsmetoder og -forudsætninger</a>.</p>";
+    text4+= "<p class=\"dbs-small\">Hvorvidt man bidrager til samfundet på andre måder en direkte økonomisk, med eksempelvis frivilligt arbejde, støtte til en ægtefælle, der har en stor indkomst, eller med børn, der ender med at betale milliarder af skattekroner, tæller ikke med i beregningen.</p>";
+    text4+= "<p class=\"dbs-small\">Fordi der er tale om en gennemsnitsberegning, kan du personligt både være mere eller mindre økonomiske bæredygtig, end resultatet viser. Du kan for eksempel have læst flere uddannelser eller fået dyrere behandlinger for sygdom end en gennemsnitsperson med samme køn, alder og uddannelse - og du kan blive arbejdsløs på et senere tidspunkt eller dø senere end gennemsnittet.</p>";
+    text4+= "<p class=\"dbs-small\">Beregningen er sammenstillet af konsulent Thomas Thomsen. Den forudsætter, at personen gennemlever hele sit liv med den nuværende indretning af skatte- og overførselssystemet, m.v. Den fungerer ikke for personer, der er flyttet til Danmark, efter de fylder 18 år eller går på pension, før de bliver 60.</p>";
+    document.getElementById("p3").innerHTML = text4;
   }
 
   // ===============================================
@@ -685,6 +688,7 @@ function Beregn(koen, alder, hf, indkomst50, ledig_syg1, udland1, udland2, pensi
   document.getElementById("dbs-desc").style.display = "none";
   document.getElementById("udfold").style.display = "block";
   document.getElementById("result").style.display = "block";
+  document.getElementById("p3").style.display = "block";
 
   location.hash = "#dbs-top";
 
