@@ -23,6 +23,10 @@
   margin: 9px 0;
 }
 
+.dbs-form-radio {
+  margin-top: 12px;
+}
+
 .dbs-form-item label {
   font-family: b-sans-r;
   font-size: 19px;
